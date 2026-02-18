@@ -1,4 +1,29 @@
-    /* Custom scrollbar */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Citoyenne - Bénin</title>
+    <script src="https://cdn.tailwindcss.com"></script> <style>
+        /* Insérez votre CSS ici */
+    </style>
+</head>
+<body class="bg-[#0a0f0d] text-white">
+    <header class="fixed top-0 w-full z-50 glass border-b border-dark-border">
+        ```
+
+### 4. Logique du Menu Mobile
+Votre script actuel bascule la classe `hidden`, mais ne gère pas la fermeture du menu lorsqu'on clique sur un lien. Ajoutez ceci dans votre `<script>` :
+
+```javascript
+// Fermer le menu mobile lors du clic sur un lien
+document.querySelectorAll('#mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('mobile-nav').classList.add('hidden');
+    });
+});
+
+/* Custom scrollbar */
     ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
