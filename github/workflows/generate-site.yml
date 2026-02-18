@@ -1,0 +1,46 @@
+name: Générer le site HTML
+
+on:
+  push:
+    paths:
+      - 'data/content.json'  # Se déclenche quand vous modifiez les données
+      - 'templates/**'
+  workflow_dispatch:  # Permet le déclenchement manuel
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Installer les dépendances
+      run: pip install jinja2
+      
+    - name: Générer le HTML
+      run: python scripts/generate-html.py
+      
+    - name: Vérifier la cohérence (optionnel)
+      run: |
+        python scripts/validate-data.py  # Script de vérification des faits
+        
+    - name: Commit et push du fichier généré
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add output/index.html
+        git diff --staged --quiet || git commit -m "🤖 Mise à jour automatique du site - $(date)"
+        git push
+        
+    - name: Upload artifact (pour téléchargement)
+      uses: actions/upload-artifact@v4
+      with:
+        name: site-html
+        path: output/index.html
+        retention-days: 30
