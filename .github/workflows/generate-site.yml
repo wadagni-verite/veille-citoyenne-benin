@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Cette ligne donne l'autorisation de "pusher" les modifications
     
     steps:
     - name: Checkout du code
@@ -28,19 +30,12 @@ jobs:
       
     - name: Vérifier la cohérence (optionnel)
       run: |
-        python scripts/validate-data.py  # Script de vérification des faits
+        python scripts/validate-data.py
         
     - name: Commit et push du fichier généré
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add output/index.html
-        git diff --staged --quiet || git commit -m "🤖 Mise à jour automatique du site - $(date)"
-        git push
-        
-    - name: Upload artifact (pour téléchargement)
-      uses: actions/upload-artifact@v4
-      with:
-        name: site-html
-        path: output/index.html
-        retention-days: 30
+        git diff --staged --quiet || (git commit -m "🤖 Mise à jour automatique du site - $(date)" && git push)
+
