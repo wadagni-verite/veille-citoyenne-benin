@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdated": "2025-02-18",
-    "version": "1.0"
+    "lastUpdated": "2025-02-19",
+    "version": "1.1"
   },
   "association": {
     "nom": "Éthique Juridique 2.0 Internationale",
@@ -10,27 +10,63 @@
     "email": "contact@eji2.org",
     "site": "https://eji2.org"
   },
-  "affaires": [
+  "navigation": [
+    {"id": "accueil", "label": "Accueil", "icon": "shield"},
+    {"id": "institutions", "label": "Institutions", "icon": "building-2"},
+    {"id": "personnalites", "label": "Personnalités", "icon": "users"},
+    {"id": "documents", "label": "Documents", "icon": "file-text"},
+    {"id": "cas", "label": "Cas Documentés", "icon": "alert-triangle"},
+    {"id": "mentions-legales", "label": "Mentions Légales", "icon": "file-text"},
+    {"id": "partager", "label": "Partager", "icon": "share-2"}
+  ],
+  "statistiques": {
+    "affaires": 1,
+    "personnes": 6,
+    "institutions": 7,
+    "documents": 7
+  },
+  "institutions": [
     {
-      "id": "feliho-2014",
-      "titre": "Affaire Succession Jean Florentin FELIHO",
-      "statut": "En cours",
-      "niveau": "CRITIQUE",
-      "date": "31/10/2014",
-      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles...",
-      "institutions": ["Tribunal de Cotonou", "Ministère de la Justice"],
-      "personnes": ["Aubierge Hungbo Kploca", "Victorien FADE", "Félix A. BALLEY"],
-      "documents": 7,
-      "preuves": [
-        {
-          "type": "Jugement",
-          "titre": "Jugement 114/14/3ème CH-EP",
-          "date": "31/10/2014",
-          "description": "Constate legs parcelle B lot 488",
-          "lien": "https://www.dropbox.com/scl/fo/g27mo8rf9c7kmkksx7p5u/...",
-          "anomalie": "Parcelle inexistante"
-        }
-      ]
+      "nom": "Ministère de la Justice",
+      "type": "Ministère",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "Brigade anti criminalité (BAC)",
+      "type": "Brigade de Police",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "APDP",
+      "type": "Autorité",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "Barreau du Bénin",
+      "type": "Barreau",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "Ministère des Finances",
+      "type": "Ministère",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "Centif",
+      "type": "Cellule",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    },
+    {
+      "nom": "Tribunal de Cotonou - 3ème Chambre",
+      "type": "Tribunal",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
     }
   ],
   "personnalites": [
@@ -41,20 +77,117 @@
       "niveau": "CRITIQUE",
       "affaireId": "feliho-2014",
       "description": "Signataire du jugement 114/14/3ème CH-EP du 31 octobre 2014"
-    }
-  ],
-  "institutions": [
+    },
     {
-      "nom": "Tribunal de Cotonou - 3ème Chambre",
-      "type": "Tribunal",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
+      "nom": "En attente",
+      "role": "Commissaire de Police",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Tentative dilatoire pour étouffer une enquête de faux en écriture publique"
+    },
+    {
+      "nom": "Félix A. BALLEY",
+      "role": "Notaire",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016 et mandataire sans mandat"
+    },
+    {
+      "nom": "Victorien FADE",
+      "role": "Avocat",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Triple conflit d'intérêts et usage de faux acte authentique"
+    },
+    {
+      "nom": "Luciano Hounkponou",
+      "role": "Responsable APDP",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Responsable au sein de l'APDP, impliqué dans les procédures de délibéré et les communications du dossier 2024 C 010."
+    },
+    {
+      "nom": "Abdou Rafiou BELLO",
+      "role": "Président CENTIF-Bénin",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Président de la CENTIF interpellé pour l'inertie du service face aux soupçons de blanchiment dans la succession."
     }
   ],
-  "statistiques": {
-    "affaires": 1,
-    "personnes": 4,
-    "institutions": 7,
-    "documents": 7
-  }
+  "affaires": [
+    {
+      "id": "feliho-2014",
+      "titre": "Affaire Succession Jean Florentin FELIHO - Faux manifestes dans des actes authentiques",
+      "statut": "En cours",
+      "niveau": "CRITIQUE",
+      "date": "31/10/2014",
+      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles produites par des officiers publics béninois. Trois catégories d'officiers publics et auxiliaires de justice - magistrat, avocat, notaire - apparaissent directement impliqués dans la production et/ou l'usage d'actes officiels béninois contradictoires.",
+      "institutions": ["Tribunal de Cotonou", "Ministère de la Justice", "APDP", "CENTIF"],
+      "personnes": ["Aubierge Hungbo Kploca", "Victorien FADE", "Félix A. BALLEY", "Luciano Hounkponou", "Abdou Rafiou BELLO"],
+      "documents": 7,
+      "preuves": [
+        {
+          "type": "Jugement",
+          "titre": "Jugement 114/14/3ème CH-EP",
+          "date": "31/10/2014",
+          "description": "Constate legs parcelle B lot 488",
+          "lien": "https://www.dropbox.com/scl/fo/g27mo8rf9c7kmkksx7p5u/AJ0kH2AvV1mui9lzSUkA0pM?rlkey=idci7qjwjywg0kq4sr6isn4sn&st=rudyhdk1&dl=0",
+          "anomalie": "Parcelle inexistante"
+        },
+        {
+          "type": "Signification",
+          "titre": "Signification du jugement",
+          "date": "2014-2015",
+          "description": "Signification du jugement frauduleux par avocat Victorien FADE",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "Conflit d'intérêts"
+        },
+        {
+          "type": "PV",
+          "titre": "PV de compulsion",
+          "date": "19/12/2017",
+          "description": "PV de compulsion du 19 décembre 2017 par Martin Jean D.C. GOUNADON",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "Parcelle inexistante"
+        },
+        {
+          "type": "Certificat",
+          "titre": "Certificat d'acquit de droit",
+          "date": "20/10/2016",
+          "description": "Certificat d'acquit de droit frauduleux du 20 octobre 2016 obtenu par le notaire Félix A. BALLEY",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "Faux et usage de faux"
+        },
+        {
+          "type": "Certificat",
+          "titre": "Acte de Décès J.F. FELIHO",
+          "date": "03/12/2010",
+          "description": "Déclaration de décès officielle: 3 décembre 2010",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "Contradiction avec certificat 2016"
+        },
+        {
+          "type": "Lettre",
+          "titre": "Lettre du Notaire GANGNITO",
+          "date": "19/09/2007",
+          "description": "Lettre du 19 septembre 2007 révélant le conflit d'intérêts de l'avocat FADE",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "Conflit d'intérêts avéré"
+        },
+        {
+          "type": "Lettre",
+          "titre": "Demande de réouverture d'enquête",
+          "date": "2025",
+          "description": "Lettre de demande de réouverture de l'enquête préliminaire au parquet spécial de la CRIET",
+          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
+          "anomalie": "En attente de réponse"
+        }
+      ]
+    }
+  ]
 }
