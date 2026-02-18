@@ -20,21 +20,26 @@ def generate_site():
         institutions=data['institutions'],
         stats=data['statistiques'],
         association=data['association'],
-        navigation=data.get('navigation', []), # Ajout de la navigation si présente
+        navigation=data.get('navigation', [
+            {"id": "accueil", "label": "Accueil", "icon": "shield"},
+            {"id": "institutions", "label": "Institutions", "icon": "building-2"},
+            {"id": "personnalites", "label": "Personnalités", "icon": "users"},
+            {"id": "documents", "label": "Documents", "icon": "file-text"},
+            {"id": "cas", "label": "Cas Documentés", "icon": "alert-triangle"},
+            {"id": "mentions-legales", "label": "Mentions Légales", "icon": "file-text"},
+            {"id": "partager", "label": "Partager", "icon": "share-2"}
+        ]),
         current_year=datetime.now().year,
         last_updated=data['metadata']['lastUpdated']
     )
     
-    # 4. Sauvegarder le fichier final dans le dossier /docs
-    # C'est ici que le changement est crucial pour GitHub Pages
+    # 4. Sauvegarder dans docs/ pour GitHub Pages
     os.makedirs('docs', exist_ok=True)
-    output_file = 'docs/index.html'
-    
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open('docs/index.html', 'w', encoding='utf-8') as f:
         f.write(html_output)
     
-    print(f"✅ Site généré avec succès dans : {output_file}")
-    print(f"📊 Statistiques : {data['statistiques']['affaires']} affaire(s), {data['statistiques']['personnes']} personne(s)")
+    print(f"✅ Site généré: docs/index.html ({len(html_output):,} caractères)")
+    print(f"📊 {len(data['affaires'])} affaire(s), {len(data['personnalites'])} personne(s), {len(data['institutions'])} institution(s)")
 
 if __name__ == "__main__":
     generate_site()
