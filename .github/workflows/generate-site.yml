@@ -3,15 +3,16 @@ name: Générer le site HTML
 on:
   push:
     paths:
-      - 'data/content.json'  # Se déclenche quand vous modifiez les données
+      - 'data/content.json'
       - 'templates/**'
-  workflow_dispatch:  # Permet le déclenchement manuel
+      - '.github/workflows/**'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Cette ligne donne l'autorisation de "pusher" les modifications
+      contents: write
     
     steps:
     - name: Checkout du code
@@ -26,16 +27,18 @@ jobs:
       run: pip install jinja2
       
     - name: Générer le HTML
-      run: python scripts/generate-html.py
-      
-    - name: Vérifier la cohérence (optionnel)
+      # Ici on force le script à écrire dans le dossier docs
       run: |
-        python scripts/validate-data.py
+        mkdir -p docs
+        python scripts/generate-html.py
+      
+    - name: Vérifier la cohérence
+      run: python scripts/validate-data.py
         
     - name: Commit et push du fichier généré
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add output/index.html
-        git diff --staged --quiet || (git commit -m "🤖 Mise à jour automatique du site - $(date)" && git push)
-
+        # On ajoute le fichier dans le dossier docs
+        git add docs/index.html
+        git diff --staged --quiet || (git commit -m "🤖 Mise à jour automatique du site (docs) - $(date)" && git push)
