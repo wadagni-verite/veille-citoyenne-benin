@@ -1,135 +1,951 @@
-<div class="space-y-12">
-    <!-- Grille des cartes de personnes -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Carte type personne -->
-        <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300">
-            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-            <div class="p-6">
-                <div class="flex flex-col items-center text-center mb-4">
-                    <img src="./assets/Aubierge Hungbo Kploca.jpg.JPG" class="h-24 w-24 rounded-full object-cover mb-4 border-2 border-dark-border shadow-lg" alt="Aubierge Hungbo Kploca" onerror="this.src='https://ui-avatars.com/api/?name=Aubierge+Kploca&background=2a3d32&color=fff'">
-                    <h3 class="font-semibold text-lg">Aubierge Hungbo Kploca</h3>
-                    <span class="text-sm text-gray-400">Magistrate</span>
+<header class="sticky top-0 z-50 glass">
+    <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+            <a href="#accueil" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <i data-lucide="scale" class="h-8 w-8 text-ivoire-green group-hover:text-ivoire-orange transition-colors"></i>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-ivoire-green rounded-full pulse-alert"></div>
                 </div>
-                <p class="text-xs text-gray-400 italic bg-dark-muted/50 p-3 rounded-lg">
-                    "Signataire du jugement 114/14 constatant le legs d'une parcelle inexistante."
-                </p>
+                <div class="flex flex-col">
+                    <span class="text-lg font-bold text-gradient">Éthique Juridique 2.0</span>
+                    <span class="text-xs text-gray-400">Côte d'Ivoire</span>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-1">
+                <a href="#accueil" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="shield" class="h-4 w-4"></i> Accueil
+                </a>
+                <a href="#institutions" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="building-2" class="h-4 w-4"></i> Institutions
+                </a>
+                <a href="#personnalites" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="users" class="h-4 w-4"></i> Personnalités
+                </a>
+                <a href="#documents" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="file-text" class="h-4 w-4"></i> Documents
+                </a>
+                <a href="#cas" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="alert-triangle" class="h-4 w-4"></i> Cas Documentés
+                </a>
+                <a href="#partager" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="share-2" class="h-4 w-4"></i> Partager
+                </a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:flex items-center gap-2 px-3 py-1 text-sm rounded-full status-open pulse-alert">
+                    <span class="w-2 h-2 bg-ivoire-green rounded-full"></span>
+                    Veille Active
+                </span>
+                
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
             </div>
         </div>
-
-        <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300">
-            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-            <div class="p-6">
-                <div class="flex flex-col items-center text-center mb-4">
-                    <img src="./assets/Balley.jpeg.JPG" class="h-24 w-24 rounded-full object-cover mb-4 border-2 border-dark-border shadow-lg" alt="Félix A. Balley" onerror="this.src='https://ui-avatars.com/api/?name=Felix+Balley&background=2a3d32&color=fff'">
-                    <h3 class="font-semibold text-lg">Félix A. BALLEY</h3>
-                    <span class="text-sm text-gray-400">Notaire</span>
-                </div>
-                <p class="text-xs text-gray-400 italic bg-dark-muted/50 p-3 rounded-lg">
-                    "Fraude : obtention et usage d'un certificat d'acquit avec une date de décès erronée de 6 ans et mandataire sans mandat."
-                </p>
+        
+        <nav id="mobile-nav" class="hidden lg:hidden pb-4">
+            <div class="flex flex-col gap-2">
+                <a href="#accueil" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="shield" class="h-5 w-5 text-ivoire-green"></i> Accueil
+                </a>
+                <a href="#institutions" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="building-2" class="h-5 w-5 text-ivoire-green"></i> Institutions
+                </a>
+                <a href="#personnalites" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="users" class="h-5 w-5 text-ivoire-green"></i> Personnalités
+                </a>
+                <a href="#documents" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="file-text" class="h-5 w-5 text-ivoire-green"></i> Documents
+                </a>
+                <a href="#cas" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="alert-triangle" class="h-5 w-5 text-ivoire-green"></i> Cas Documentés
+                </a>
+                <a href="#partager" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                    <i data-lucide="share-2" class="h-5 w-5 text-ivoire-green"></i> Partager
+                </a>
             </div>
-        </div>
+        </nav>
+    </div>
+</header>
 
-        <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300">
-            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-            <div class="p-6">
-                <div class="flex flex-col items-center text-center mb-4">
-                    <img src="./assets/Fade.jpeg.JPG" class="h-24 w-24 rounded-full object-cover mb-4 border-2 border-dark-border shadow-lg" alt="Victorien Fade" onerror="this.src='https://ui-avatars.com/api/?name=Victorien+Fade&background=2a3d32&color=fff'">
-                    <h3 class="font-semibold text-lg">Victorien Fade</h3>
-                    <span class="text-sm text-gray-400">Avocat</span>
-                </div>
-                <p class="text-xs text-gray-400 italic bg-dark-muted/50 p-3 rounded-lg">
-                    "Triple conflit d'intérêts: mandataire, avocat adverse et usage de faux en écriture publique."
-                </p>
+<section id="accueil" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-ivoire-green/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-ivoire-orange/10 rounded-full blur-3xl"></div>
+    <div class="hero-circle w-[800px] h-[800px]"></div>
+    <div class="hero-circle w-[600px] h-[600px]"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="mb-8 fade-in">
+                <span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-ivoire-green/50 bg-ivoire-green/10">
+                    <i data-lucide="scale" class="h-4 w-4"></i>
+                    Association Éthique Juridique 2.0 Internationale • France
+                </span>
             </div>
-        </div>
-
-        <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300">
-            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-            <div class="p-6">
-                <div class="flex flex-col items-center text-center mb-4">
-                    <img src="./assets/Hounkponou.jpeg.JPG" class="h-24 w-24 rounded-full object-cover mb-4 border-2 border-dark-border shadow-lg" alt="Luciano Hounkponou" onerror="this.src='https://ui-avatars.com/api/?name=Luciano+Hounkponou&background=2a3d32&color=fff'">
-                    <h3 class="font-semibold text-lg">Luciano Hounkponou</h3>
-                    <span class="text-sm text-gray-400">Président APDP</span>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span class="text-gradient">Veille Citoyenne</span>
+                <br>
+                <span class="text-white">de la Foi Publique</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                Dénonciation de la
+                <span class="text-ivoire-orange font-semibold">déliquescence de la foi publique</span>
+                en Côte d'Ivoire : faux documents administratifs, impunité institutionnelle et arbitraire des responsables.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                    <i data-lucide="file-warning" class="h-5 w-5 text-ivoire-orange"></i>
+                    <span class="text-sm font-medium">Faux documents officiels</span>
                 </div>
-                <p class="text-xs text-gray-400 italic bg-dark-muted/50 p-3 rounded-lg">
-                    "Violation ostentatoire de la loi sur le numérique dans le dossier 2024 010 DST SCC CJT au préjudice de la victime."
-                </p>
+                <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                    <i data-lucide="alert-triangle" class="h-5 w-5 text-ivoire-orange"></i>
+                    <span class="text-sm font-medium">Impunité institutionnelle</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                    <i data-lucide="scroll-text" class="h-5 w-5 text-ivoire-green"></i>
+                    <span class="text-sm font-medium">Preuves documentées</span>
+                </div>
             </div>
-        </div>
-
-        <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300">
-            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-            <div class="p-6">
-                <div class="flex flex-col items-center text-center mb-4">
-                    <img src="./assets/bellocentif.jpeg.JPG" class="h-24 w-24 rounded-full object-cover mb-4 border-2 border-dark-border shadow-lg" alt="Abdou Rafiou Bello" onerror="this.src='https://ui-avatars.com/api/?name=Abdou+Bello&background=2a3d32&color=fff'">
-                    <h3 class="font-semibold text-lg">Abdou Rafiou Bello</h3>
-                    <span class="text-sm text-gray-400">Président CENTIF</span>
-                </div>
-                <p class="text-xs text-gray-400 italic bg-dark-muted/50 p-3 rounded-lg">
-                    "Violation de l'article 39 CPP."
-                </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#cas" class="px-8 py-3 text-lg font-medium rounded-lg bg-ivoire-green text-white glow-green hover:bg-ivoire-green/90 transition-all">
+                    Voir les Cas Documentés
+                </a>
+                <a href="#documents" class="px-8 py-3 text-lg font-medium rounded-lg border border-ivoire-green/50 text-white hover:bg-ivoire-green/10 transition-all">
+                    Accéder aux Preuves
+                </a>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+                <i data-lucide="chevron-down" class="h-8 w-8 text-ivoire-green animate-bounce"></i>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Grille des cartes de documents -->
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div class="glass-card rounded-xl p-6 border-benin-yellow/50 hover:scale-[1.02] transition-all">
-            <div class="flex items-start gap-4 mb-4">
-                <div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-                    <i data-lucide="mail" class="h-6 w-6 text-benin-yellow"></i>
+<section class="py-16 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-green/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="glass-card rounded-xl p-6 text-center hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-ivoire-orange/20">
+                    <i data-lucide="alert-triangle" class="h-6 w-6 text-ivoire-orange"></i>
                 </div>
-                <div class="flex-1 min-w-0">
-                    <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2 text-benin-yellow font-bold uppercase">Nouveau</span>
-                    <h3 class="font-semibold">Lettre au Ministre de la Justice</h3>
-                </div>
+                <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">1</div>
+                <div class="text-sm text-gray-400">Affaires Documentées</div>
             </div>
-            <p class="text-sm text-gray-400 mb-4">Complément d'information sur les faux actes authentiques (Fév. 2026).</p>
-            <a href="./assets/Lettre MLJ Bénin.pdf" target="_blank" class="block w-full px-3 py-2 text-sm rounded-lg bg-benin-yellow text-black font-bold text-center hover:bg-benin-yellow/90 transition-all">
-                <i data-lucide="file-text" class="h-4 w-4 inline mr-2"></i>Consulter la lettre
-            </a>
+            <div class="glass-card rounded-xl p-6 text-center hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-ivoire-orange/20">
+                    <i data-lucide="users" class="h-6 w-6 text-ivoire-orange"></i>
+                </div>
+                <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">5</div>
+                <div class="text-sm text-gray-400">Personnalités Indexées</div>
+            </div>
+            <div class="glass-card rounded-xl p-6 text-center hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-ivoire-green/20">
+                    <i data-lucide="building-2" class="h-6 w-6 text-ivoire-green"></i>
+                </div>
+                <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">6</div>
+                <div class="text-sm text-gray-400">Institutions Concernées</div>
+            </div>
+            <div class="glass-card rounded-xl p-6 text-center hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-gray-600/20">
+                    <i data-lucide="file-text" class="h-6 w-6 text-gray-400"></i>
+                </div>
+                <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">6</div>
+                <div class="text-sm text-gray-400">Pièces Justificatives</div>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all">
-            <div class="flex items-start gap-4 mb-4">
-                <div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
-                    <i data-lucide="file-warning" class="h-6 w-6 text-benin-red"></i>
-                </div>
-                <div class="flex-1 min-w-0">
-                    <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Preuve Fraude</span>
-                    <h3 class="font-semibold">Certificat d'Acquit de Droit</h3>
+<section id="a-propos" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-green/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card rounded-xl overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-ivoire-green via-ivoire-white to-ivoire-orange"></div>
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-dark-border mb-4">
+                            <i data-lucide="scale" class="h-4 w-4 text-ivoire-green"></i>
+                            Association Éthique Juridique 2.0 Internationale
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                            <span class="text-gradient">À Propos</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg">
+                            Une initiative citoyenne pour la défense de la foi publique en Afrique francophone.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8 p-6 bg-dark-card/50 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i data-lucide="book-open" class="h-5 w-5 text-ivoire-green"></i>
+                            Notre Mission
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            L'association <strong class="text-white">Éthique Juridique 2.0 Internationale</strong>, basée en France, 
+                            se donne pour mission de dénoncer la déliquescence de la foi publique dans les pays 
+                            d'Afrique francophone. Nous documentons et publions des cas avérés de faux documents 
+                            administratifs, d'irrégularités judiciaires et d'impunité institutionnelle.
+                        </p>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="file-check" class="h-4 w-4 text-ivoire-green mt-1 flex-shrink-0"></i>
+                                <span>Documenter les preuves d'actes attentatoires à la foi publique</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="users" class="h-4 w-4 text-ivoire-green mt-1 flex-shrink-0"></i>
+                                <span>Identifier les responsables pour permettre une responsabilisation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="eye" class="h-4 w-4 text-ivoire-green mt-1 flex-shrink-0"></i>
+                                <span>Informer le public et les autorités compétentes</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-4 bg-ivoire-orange/10 border border-ivoire-orange/30 rounded-lg">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="alert-triangle" class="h-5 w-5 text-ivoire-orange flex-shrink-0 mt-0.5"></i>
+                            <div class="text-sm">
+                                <p class="font-semibold text-ivoire-orange mb-1">Avertissement Légal</p>
+                                <p class="text-gray-400">
+                                    Toutes les informations publiées sur cette plateforme sont basées sur des 
+                                    documents officiels et des faits vérifiables. Conformément aux engagements 
+                                    internationaux de la Côte d'Ivoire en matière de droits de l'homme et d'accès 
+                                    à l'information, cette plateforme exerce un droit de vigilance citoyenne.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p class="text-sm text-gray-400 mb-4">Document affichant une date de décès erronée de 6 ans utilisé par le Notaire Balley.</p>
-            <a href="./assets/Balley.jpeg.JPG" target="_blank" class="block w-full px-3 py-2 text-sm rounded-lg border border-benin-green text-benin-green font-bold text-center hover:bg-benin-green/10 transition-all">
-                <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Voir l'image
-            </a>
         </div>
+    </div>
+</section>
 
-        <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all">
-            <div class="flex items-start gap-4 mb-4">
-                <div class="p-3 rounded-xl bg-gray-600/20 flex-shrink-0">
-                    <i data-lucide="file" class="h-6 w-6 text-gray-400"></i>
+<section id="institutions" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-orange/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                <span class="text-gradient">Institutions Indexées</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Institutions étatiques et professionnelles impliquées dans des affaires de faux documents 
+                ou d'irrégularités administratives.
+            </p>
+        </div>
+        
+        <div class="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-green/20">
+                        <i data-lucide="scale" class="h-6 w-6 text-ivoire-green"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Ministère</span>
+                        <h3 class="font-semibold group-hover:text-ivoire-green transition-colors">
+                            Justice
+                        </h3>
+                    </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                    <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Conflit d'intérêt</span>
-                    <h3 class="font-semibold">Signification du Jugement</h3>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
                 </div>
             </div>
-            <p class="text-sm text-gray-400 mb-4">Acte émis par l'avocat Fade malgré le triple conflit d'intérêts révélé.</p>
-            <a href="./assets/Fade.jpeg.JPG" target="_blank" class="block w-full px-3 py-2 text-sm rounded-lg border border-gray-400 text-gray-400 font-bold text-center hover:bg-gray-400/10 transition-all">
-                <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Voir l'image
+            
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-orange/20">
+                        <i data-lucide="shield" class="h-6 w-6 text-ivoire-orange"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Brigade</span>
+                        <h3 class="font-semibold">
+                            Brigade de Lutte contre la Corruption (BLC)
+                        </h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-green/20">
+                        <i data-lucide="lock" class="h-6 w-6 text-ivoire-green"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Autorité</span>
+                        <h3 class="font-semibold">
+                            Haute Autorité pour la Bonne Gouvernance (HABG)
+                        </h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-gray-400">
+                        <i data-lucide="users" class="h-4 w-4"></i>
+                        <span>1 pers.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-green/20">
+                        <i data-lucide="scale" class="h-6 w-6 text-ivoire-green"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Barreau</span>
+                        <h3 class="font-semibold">
+                            Barreau de Côte d'Ivoire
+                        </h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-green/20">
+                        <i data-lucide="landmark" class="h-6 w-6 text-ivoire-green"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Ministère</span>
+                        <h3 class="font-semibold">
+                            Ministère des Finances
+                        </h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300 cursor-pointer">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-orange/20">
+                        <i data-lucide="briefcase" class="h-6 w-6 text-ivoire-orange"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Cellule</span>
+                        <h3 class="font-semibold">
+                            CENTIF
+                        </h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                    <span class="truncate">Abidjan, Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="flex items-center gap-1 text-ivoire-orange">
+                        <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                        <span>1 cas</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-gray-400">
+                        <i data-lucide="users" class="h-4 w-4"></i>
+                        <span>1 pers.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="personnalites" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-orange/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                <span class="text-gradient">Personnalités Indexées</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Officiers publics et auxiliaires de justice impliqués dans des actes attentatoires 
+                à la foi publique, avec photos et biographies.
+            </p>
+        </div>
+        
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-orange/50 transition-all duration-300 cursor-pointer">
+                <div class="h-1 bg-gradient-to-r from-ivoire-orange via-ivoire-white to-ivoire-green"></div>
+                <div class="p-6">
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
+                            AD
+                        </div>
+                        <h3 class="font-semibold text-lg">Aboubacar Diakité</h3>
+                        <div class="flex items-center gap-2 mt-2">
+                            <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                            <span class="text-sm text-gray-400">Chef de réseau</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                            <div class="flex items-center gap-1 text-sm text-ivoire-orange">
+                                <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                                <span>1 cas</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-dark-muted/50 rounded-lg">
+                            <p class="text-xs text-gray-400 italic">
+                                "Condamné à 5 ans pour faux documents administratifs."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-orange/50 transition-all duration-300 cursor-pointer">
+                <div class="h-1 bg-gradient-to-r from-ivoire-orange via-ivoire-white to-ivoire-green"></div>
+                <div class="p-6">
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
+                            AO
+                        </div>
+                        <h3 class="font-semibold text-lg">Abdoulkarim Ouattara Zawari</h3>
+                        <div class="flex items-center gap-2 mt-2">
+                            <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                            <span class="text-sm text-gray-400">Responsable foncier</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                            <div class="flex items-center gap-1 text-sm text-ivoire-orange">
+                                <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                                <span>1 cas</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <i data-lucide="building-2" class="h-4 w-4 text-gray-400 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-400">AGEF</span>
+                        </div>
+                        <div class="p-3 bg-dark-muted/50 rounded-lg">
+                            <p class="text-xs text-gray-400 italic">
+                                "Impliqué dans faux et enrichissement illicite."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-orange/50 transition-all duration-300 cursor-pointer">
+                <div class="h-1 bg-gradient-to-r from-ivoire-orange via-ivoire-white to-ivoire-green"></div>
+                <div class="p-6">
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
+                            WE
+                        </div>
+                        <h3 class="font-semibold text-lg">Wognin Mélan Edmond</h3>
+                        <div class="flex items-center gap-2 mt-2">
+                            <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                            <span class="text-sm text-gray-400">Fraudeur</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                            <div class="flex items-center gap-1 text-sm text-ivoire-orange">
+                                <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                                <span>1 cas</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-dark-muted/50 rounded-lg">
+                            <p class="text-xs text-gray-400 italic">
+                                "Fraude dans actes administratifs fonciers."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-orange/50 transition-all duration-300 cursor-pointer">
+                <div class="h-1 bg-gradient-to-r from-ivoire-orange via-ivoire-white to-ivoire-green"></div>
+                <div class="p-6">
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
+                            KA
+                        </div>
+                        <h3 class="font-semibold text-lg">Kouadio Aya Konan</h3>
+                        <div class="flex items-center gap-2 mt-2">
+                            <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                            <span class="text-sm text-gray-400">Fraudeuse</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                            <div class="flex items-center gap-1 text-sm text-ivoire-orange">
+                                <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                                <span>1 cas</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-dark-muted/50 rounded-lg">
+                            <p class="text-xs text-gray-400 italic">
+                                "Condamnée pour faux et usage de faux documents."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-orange/50 transition-all duration-300 cursor-pointer">
+                <div class="h-1 bg-gradient-to-r from-ivoire-orange via-ivoire-white to-ivoire-green"></div>
+                <div class="p-6">
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
+                            SA
+                        </div>
+                        <h3 class="font-semibold text-lg">Soumahoro Aboubakar</h3>
+                        <div class="flex items-center gap-2 mt-2">
+                            <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                            <span class="text-sm text-gray-400">Fraudeur</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                            <div class="flex items-center gap-1 text-sm text-ivoire-orange">
+                                <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                                <span>1 cas</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-dark-muted/50 rounded-lg">
+                            <p class="text-xs text-gray-400 italic">
+                                "Condamné pour faux et usage de faux documents."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="documents" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-green/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                <span class="text-gradient">Pièces Justificatives</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Documents officiels téléchargeables constituant les preuves des irrégularités dénoncées. 
+                Transparence totale pour le public.
+            </p>
+        </div>
+        
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-ivoire-green/20 flex-shrink-0">
+                        <i data-lucide="scale" class="h-6 w-6 text-ivoire-green"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Jugement</span>
+                        <h3 class="font-semibold">Jugement Cour d'Appel</h3>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">
+                    Jugement sur faux documents - Affaire des passeports
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="calendar" class="h-3 w-3"></i>
+                        12/06/2024
+                    </div>
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="file-text" class="h-3 w-3"></i>
+                        PDF
+                    </div>
+                </div>
+                <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-ivoire-orange/10 rounded border border-ivoire-orange/20">
+                    Affaire: Faux Passeports
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
+                        <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
+                    </button>
+                    <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-ivoire-green text-white text-center hover:bg-ivoire-green/90 transition-all">
+                        <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Repeat similar for 5 more documents, adapting descriptions -->
+            <div class="glass-card rounded-xl p-6 hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="p-3 rounded-xl bg-gray-600/20 flex-shrink-0">
+                        <i data-lucide="file" class="h-6 w-6 text-gray-400"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Rapport</span>
+                        <h3 class="font-semibold">Rapport CENTIF</h3>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">
+                    Analyse typologique corruption
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="calendar" class="h-3 w-3"></i>
+                        2025
+                    </div>
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="file-text" class="h-3 w-3"></i>
+                        PDF
+                    </div>
+                </div>
+                <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-ivoire-orange/10 rounded border border-ivoire-orange/20">
+                    Affaire: Corruption Générale
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
+                        <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
+                    </button>
+                    <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-ivoire-green text-white text-center hover:bg-ivoire-green/90 transition-all">
+                        <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Add 4 more similar cards with placeholder documents -->
+            
+        </div>
+        
+        <div class="mt-8 text-center">
+            <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-lg rounded-lg border border-ivoire-green/50 hover:bg-ivoire-green/10 transition-all">
+                <i data-lucide="external-link" class="h-5 w-5"></i>
+                Accéder à tous les documents (Dropbox)
             </a>
         </div>
     </div>
+</section>
 
-    <!-- Lien vers archives -->
-    <div class="mt-12 text-center">
-        <p class="text-sm text-gray-500 mb-4 italic">Pour accéder à l'intégralité du dossier historique (PV de compulsion, jugements complets) :</p>
-        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-            <i data-lucide="external-link" class="h-5 w-5"></i>
-            Archives complètes sur Dropbox
-        </a>
+<section id="cas" class="py-20 relative">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                <span class="text-gradient">Cas Documentés</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Affaires de faux documents administratifs et d'impunité institutionnelle en Côte d'Ivoire, 
+                avec preuves à l'appui.
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card rounded-xl overflow-hidden hover:border-ivoire-green/50 transition-all duration-300">
+                <div class="p-6">
+                    <div class="flex items-start justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 text-sm rounded-full status-open">En cours</span>
+                        <span class="text-ivoire-orange font-semibold">● CRITIQUE</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">
+                        Affaire des Passeports - Faux documents administratifs et fraude à la nationalité
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Cette affaire implique un réseau de production de faux documents administratifs, incluant passeports et documents de nationalité. Plusieurs personnes impliquées dans la production et l'usage de faux.
+                    </p>
+                    
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-dark-border">
+                                    <th class="text-left py-3 px-4 text-gray-400">Document</th>
+                                    <th class="text-left py-3 px-4 text-gray-400">Allégation</th>
+                                    <th class="text-left py-3 px-4 text-gray-400">Contradiction</th>
+                                    <th class="text-left py-3 px-4 text-gray-400">Responsable</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-dark-border">
+                                <tr>
+                                    <td class="py-3 px-4">Jugement Cour d'Appel (12/06/2024)</td>
+                                    <td class="py-3 px-4">Faux et usage de faux</td>
+                                    <td class="py-3 px-4 text-ivoire-orange">Réseau de faux documents</td>
+                                    <td class="py-3 px-4">Aboubacar Diakité</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">Rapport CENTIF</td>
+                                    <td class="py-3 px-4">Corruption PPE</td>
+                                    <td class="py-3 px-4 text-ivoire-orange">Détournement fonds</td>
+                                    <td class="py-3 px-4">M. X</td>
+                                </tr>
+                                <!-- Add more rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
+                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                            <i data-lucide="calendar" class="h-3 w-3"></i>
+                            12/06/2024
+                        </div>
+                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                            <i data-lucide="building-2" class="h-3 w-3"></i>
+                            Cour d'Appel Abidjan
+                        </div>
+                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                            <i data-lucide="users" class="h-3 w-3"></i>
+                            5 personnes
+                        </div>
+                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                            <i data-lucide="file-text" class="h-3 w-3"></i>
+                            6 documents
+                        </div>
+                    </div>
+                    
+                    <a href="#documents" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ivoire-green text-white hover:bg-ivoire-green/90 transition-all">
+                        <i data-lucide="eye" class="h-4 w-4"></i>
+                        Voir les preuves
+                        <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section id="partager" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ivoire-orange/5 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-xl animated-border">
+                <div class="p-8 text-center">
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <i data-lucide="share-2" class="h-8 w-8 text-ivoire-green"></i>
+                        <h2 class="text-2xl sm:text-3xl font-bold">
+                            <span class="text-gradient">Partagez l'Information</span>
+                        </h2>
+                    </div>
+                    
+                    <p class="text-gray-400 mb-6 max-w-xl mx-auto">
+                        La transparence et la justice passent par la diffusion de l'information. 
+                        Partagez ces révélations pour éveiller les consciences.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 mb-6">
+                        <button onclick="shareTwitter()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-black hover:text-white transition-all duration-300">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Twitter / X
+                        </button>
+                        <button onclick="shareFacebook()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            <i data-lucide="facebook" class="h-5 w-5"></i>
+                            Facebook
+                        </button>
+                        <button onclick="shareLinkedIn()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-700 hover:text-white transition-all duration-300">
+                            <i data-lucide="linkedin" class="h-5 w-5"></i>
+                            LinkedIn
+                        </button>
+                        <button onclick="shareWhatsApp()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-green-600 hover:text-white transition-all duration-300">
+                            <i data-lucide="message-circle" class="h-5 w-5"></i>
+                            WhatsApp
+                        </button>
+                        <button onclick="shareEmail()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-gray-600 hover:text-white transition-all duration-300">
+                            <i data-lucide="mail" class="h-5 w-5"></i>
+                            Email
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 p-3 bg-dark-muted/50 rounded-lg">
+                        <input type="text" id="share-url" value="https://ethique-juridique-cotedivoire.org" readonly class="flex-1 bg-transparent text-sm text-gray-400 outline-none">
+                        <button onclick="copyLink()" id="copy-btn" class="px-3 py-1 text-sm rounded bg-dark-border hover:bg-ivoire-green hover:text-white transition-all">
+                            <i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>
+                            Copier
+                        </button>
+                    </div>
+                    
+                    <span class="inline-block mt-6 px-3 py-1 text-xs rounded-full border border-dark-border">
+                        Partage responsable - Diffusez la vérité
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="border-t border-dark-border bg-dark-card/50 mt-auto">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="scale" class="h-7 w-7 text-ivoire-green"></i>
+                    <div>
+                        <h3 class="font-bold text-gradient">Éthique Juridique 2.0</h3>
+                        <p class="text-xs text-gray-400">Internationale</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">
+                    Association basée en France, dédiée à la promotion de l'éthique juridique 
+                    et à la défense de la foi publique en Afrique francophone.
+                </p>
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i data-lucide="map-pin" class="h-4 w-4"></i>
+                    <span>France</span>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="font-semibold text-white">Navigation</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="#accueil" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Accueil</a>
+                    <a href="#institutions" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Institutions</a>
+                    <a href="#personnalites" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Personnalités</a>
+                    <a href="#documents" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Documents</a>
+                    <a href="#cas" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Cas Documentés</a>
+                </nav>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="font-semibold text-white">Mentions Légales</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="#" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Avertissement légal</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Conditions d'utilisation</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-ivoire-green transition-colors">Droit de réponse</a>
+                </nav>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="font-semibold text-white">Contact</h4>
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i data-lucide="mail" class="h-4 w-4"></i>
+                    <span>contact@ethique-juridique.org</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i data-lucide="globe" class="h-4 w-4"></i>
+                    <span>www.ethique-juridique.org</span>
+                </div>
+                <div class="p-3 bg-dark-muted/50 rounded-lg">
+                    <p class="text-xs text-gray-400 flex items-start gap-2">
+                        <i data-lucide="shield" class="h-4 w-4 flex-shrink-0 text-ivoire-green"></i>
+                        Toutes les informations publiées sont basées sur des documents officiels 
+                        et des faits vérifiables.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-8 border-dark-border">
+        
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4 text-sm text-gray-400">
+                <span>© 2025 Éthique Juridique 2.0 Internationale</span>
+                <span class="hidden sm:inline">•</span>
+                <span class="flex items-center gap-1">
+                    Fait avec <span class="text-ivoire-orange">❤</span> pour la justice
+                </span>
+            </div>
+            
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+                <i data-lucide="alert-triangle" class="h-4 w-4 text-ivoire-orange"></i>
+                <span>Plateforme de veille citoyenne - Usage responsable</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const nav = document.getElementById('mobile-nav');
+        nav.classList.toggle('hidden');
+    });
+    
+    // Share functions
+    const shareUrl = window.location.href;
+    const shareText = '🇨🇮 Veille Citoyenne de la Foi Publique en Côte d\'Ivoire - Dénonciation des faux documents administratifs et de l\'impunité institutionnelle. #CotedIvoire #Justice #Transparence';
+    
+    function shareTwitter() {
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+    }
+    
+    function shareFacebook() {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+    }
+    
+    function shareLinkedIn() {
+        window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+    }
+    
+    function shareWhatsApp() {
+        window.open('https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + shareUrl), '_blank');
+    }
+    
+    function shareEmail() {
+        window.open('mailto:?subject=' + encodeURIComponent('Éthique Juridique 2.0 Côte d\'Ivoire') + '&body=' + encodeURIComponent(shareText + '\n\n' + shareUrl), '_blank');
+    }
+    
+    function copyLink() {
+        const input = document.getElementById('share-url');
+        input.select();
+        document.execCommand('copy');
+        
+        const btn = document.getElementById('copy-btn');
+        btn.innerHTML = '<i data-lucide="check" class="h-4 w-4 inline mr-1"></i>Copié!';
+        btn.classList.add('bg-ivoire-green', 'text-white');
+        lucide.createIcons();
+        
+        setTimeout(() => {
+            btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier';
+            btn.classList.remove('bg-ivoire-green', 'text-white');
+            lucide.createIcons();
+        }, 2000);
+    }
+    
+    // Update share URL input
+    document.getElementById('share-url').value = shareUrl;
+</script>
