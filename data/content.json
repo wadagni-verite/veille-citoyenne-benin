@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-02-18",
+    "version": "1.0"
+  },
+  "association": {
+    "nom": "Éthique Juridique 2.0 Internationale",
+    "siege": "60 rue G. EIFFEL, 94000 Créteil",
+    "rna": "W941020107",
+    "email": "contact@eji2.org",
+    "site": "https://eji2.org"
+  },
+  "affaires": [
+    {
+      "id": "feliho-2014",
+      "titre": "Affaire Succession Jean Florentin FELIHO",
+      "statut": "En cours",
+      "niveau": "CRITIQUE",
+      "date": "31/10/2014",
+      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles...",
+      "institutions": ["Tribunal de Cotonou", "Ministère de la Justice"],
+      "personnes": ["Aubierge Hungbo Kploca", "Victorien FADE", "Félix A. BALLEY"],
+      "documents": 7,
+      "preuves": [
+        {
+          "type": "Jugement",
+          "titre": "Jugement 114/14/3ème CH-EP",
+          "date": "31/10/2014",
+          "description": "Constate legs parcelle B lot 488",
+          "lien": "https://www.dropbox.com/scl/fo/g27mo8rf9c7kmkksx7p5u/...",
+          "anomalie": "Parcelle inexistante"
+        }
+      ]
+    }
+  ],
+  "personnalites": [
+    {
+      "nom": "Aubierge Hungbo Kploca",
+      "role": "Magistrate",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "affaireId": "feliho-2014",
+      "description": "Signataire du jugement 114/14/3ème CH-EP du 31 octobre 2014"
+    }
+  ],
+  "institutions": [
+    {
+      "nom": "Tribunal de Cotonou - 3ème Chambre",
+      "type": "Tribunal",
+      "cas": 1,
+      "localisation": "Cotonou, Bénin"
+    }
+  ],
+  "statistiques": {
+    "affaires": 1,
+    "personnes": 4,
+    "institutions": 7,
+    "documents": 7
+  }
+}
