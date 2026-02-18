@@ -31,133 +31,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #141c18;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2a3d32;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3a5242;
-        }
-
-        /* Glassmorphism */
-        .glass {
-            background: rgba(20, 28, 24, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(42, 61, 50, 0.5);
-        }
-
-        .glass-card {
-            background: rgba(20, 28, 24, 0.9);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(42, 61, 50, 0.6);
-        }
-
-        /* Text gradient */
-        .text-gradient {
-            background: linear-gradient(135deg, #008751 0%, #FCD116 50%, #E8112D 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Glow effects */
-        .glow-green {
-            box-shadow: 0 0 20px rgba(0, 135, 81, 0.4), 0 0 40px rgba(0, 135, 81, 0.2);
-        }
-
-        /* Animated border */
-        .animated-border {
-            position: relative;
-            overflow: hidden;
-        }
-        .animated-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            border-radius: inherit;
-            background: linear-gradient(135deg, #008751, #FCD116, #E8112D, #008751);
-            background-size: 300% 300%;
-            animation: gradient-border 6s ease infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-        }
-
-        @keyframes gradient-border {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Pulse animation */
-        .pulse-alert {
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Fade in animation */
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Background grid */
-        .bg-grid {
-            background-image:
-                linear-gradient(rgba(42, 61, 50, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(42, 61, 50, 0.3) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        /* Status badges */
-        .status-open {
-            background: rgba(0, 135, 81, 0.2);
-            color: #00c96a;
-            border: 1px solid rgba(0, 135, 81, 0.4);
-        }
-        .status-investigation {
-            background: rgba(252, 209, 22, 0.2);
-            color: #fcd116;
-            border: 1px solid rgba(252, 209, 22, 0.4);
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Hero circles */
-        .hero-circle {
-            border: 1px solid rgba(0, 135, 81, 0.1);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        * { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #141c18; }
+        ::-webkit-scrollbar-thumb { background: #2a3d32; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3a5242; }
+        .glass { background: rgba(20, 28, 24, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(42, 61, 50, 0.5); }
+        .glass-card { background: rgba(20, 28, 24, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(42, 61, 50, 0.6); }
+        .text-gradient { background: linear-gradient(135deg, #008751 0%, #FCD116 50%, #E8112D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glow-green { box-shadow: 0 0 20px rgba(0, 135, 81, 0.4), 0 0 40px rgba(0, 135, 81, 0.2); }
+        .animated-border { position: relative; overflow: hidden; }
+        .animated-border::before { content: ''; position: absolute; inset: 0; padding: 2px; border-radius: inherit; background: linear-gradient(135deg, #008751, #FCD116, #E8112D, #008751); background-size: 300% 300%; animation: gradient-border 6s ease infinite; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        @keyframes gradient-border { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .pulse-alert { animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .bg-grid { background-image: linear-gradient(rgba(42, 61, 50, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42, 61, 50, 0.3) 1px, transparent 1px); background-size: 50px 50px; }
+        .status-open { background: rgba(0, 135, 81, 0.2); color: #00c96a; border: 1px solid rgba(0, 135, 81, 0.4); }
+        .status-investigation { background: rgba(252, 209, 22, 0.2); color: #fcd116; border: 1px solid rgba(252, 209, 22, 0.4); }
+        html { scroll-behavior: smooth; }
+        .hero-circle { border: 1px solid rgba(0, 135, 81, 0.1); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
     </style>
 </head>
 <body class="bg-dark-bg text-white">
+    
+    <!-- HEADER -->
     <header class="sticky top-0 z-50 glass">
         <div class="container mx-auto px-4">
             <div class="flex h-16 items-center justify-between">
@@ -173,27 +72,11 @@
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-1">
-                    <a href="#accueil" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="shield" class="h-4 w-4"></i> Accueil
+                    {% for item in navigation %}
+                    <a href="#{{ item.id }}" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
+                        <i data-lucide="{{ item.icon }}" class="h-4 w-4"></i> {{ item.label }}
                     </a>
-                    <a href="#institutions" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="building-2" class="h-4 w-4"></i> Institutions
-                    </a>
-                    <a href="#personnalites" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="users" class="h-4 w-4"></i> Personnalités
-                    </a>
-                    <a href="#documents" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="file-text" class="h-4 w-4"></i> Documents
-                    </a>
-                    <a href="#cas" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="alert-triangle" class="h-4 w-4"></i> Cas Documentés
-                    </a>
-                    <a href="#mentions-legales" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="file-text" class="h-4 w-4"></i> Mentions Légales
-                    </a>
-                    <a href="#partager" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="share-2" class="h-4 w-4"></i> Partager
-                    </a>
+                    {% endfor %}
                 </nav>
 
                 <div class="flex items-center gap-4">
@@ -201,41 +84,26 @@
                         <span class="w-2 h-2 bg-benin-green rounded-full"></span>
                         Veille Active
                     </span>
-
                     <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white">
                         <i data-lucide="menu" class="h-6 w-6"></i>
                     </button>
                 </div>
             </div>
 
+            <!-- Mobile Navigation -->
             <nav id="mobile-nav" class="hidden lg:hidden pb-4">
                 <div class="flex flex-col gap-2">
-                    <a href="#accueil" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="shield" class="h-5 w-5 text-benin-green"></i> Accueil
+                    {% for item in navigation %}
+                    <a href="#{{ item.id }}" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
+                        <i data-lucide="{{ item.icon }}" class="h-5 w-5 text-benin-green"></i> {{ item.label }}
                     </a>
-                    <a href="#institutions" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="building-2" class="h-5 w-5 text-benin-green"></i> Institutions
-                    </a>
-                    <a href="#personnalites" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="users" class="h-5 w-5 text-benin-green"></i> Personnalités
-                    </a>
-                    <a href="#documents" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="file-text" class="h-5 w-5 text-benin-green"></i> Documents
-                    </a>
-                    <a href="#cas" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="alert-triangle" class="h-5 w-5 text-benin-green"></i> Cas Documentés
-                    </a>
-                    <a href="#mentions-legales" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="file-text" class="h-5 w-5 text-benin-green"></i> Mentions Légales
-                    </a>
-                    <a href="#partager" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all">
-                        <i data-lucide="share-2" class="h-5 w-5 text-benin-green"></i> Partager
-                    </a>
+                    {% endfor %}
                 </div>
             </nav>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section id="accueil" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-grid opacity-30"></div>
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-benin-green/20 rounded-full blur-3xl"></div>
@@ -248,7 +116,7 @@
                 <div class="mb-8 fade-in">
                     <span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-benin-green/50 bg-benin-green/10">
                         <i data-lucide="scale" class="h-4 w-4"></i>
-                        Association Éthique Juridique 2.0 Internationale • France
+                        {{ association.nom }} • France
                     </span>
                 </div>
 
@@ -295,42 +163,52 @@
         </div>
     </section>
 
+    <!-- STATISTIQUES DYNAMIQUES -->
     <section class="py-16 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <!-- Affaires -->
                 <div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50 transition-all duration-300">
                     <div class="inline-flex p-3 rounded-full mb-4 bg-benin-red/20">
                         <i data-lucide="alert-triangle" class="h-6 w-6 text-benin-red"></i>
                     </div>
-                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">1</div>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">{{ stats.affaires }}</div>
                     <div class="text-sm text-gray-400">Affaires Documentées</div>
                 </div>
+
+                <!-- Personnalités -->
                 <div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50 transition-all duration-300">
                     <div class="inline-flex p-3 rounded-full mb-4 bg-benin-yellow/20">
                         <i data-lucide="users" class="h-6 w-6 text-benin-yellow"></i>
                     </div>
-                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">4</div>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">{{ stats.personnes }}</div>
                     <div class="text-sm text-gray-400">Personnalités Indexées</div>
                 </div>
+
+                <!-- Institutions -->
                 <div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50 transition-all duration-300">
                     <div class="inline-flex p-3 rounded-full mb-4 bg-benin-green/20">
                         <i data-lucide="building-2" class="h-6 w-6 text-benin-green"></i>
                     </div>
-                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">7</div>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">{{ stats.institutions }}</div>
                     <div class="text-sm text-gray-400">Institutions Concernées</div>
                 </div>
+
+                <!-- Documents -->
                 <div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50 transition-all duration-300">
                     <div class="inline-flex p-3 rounded-full mb-4 bg-gray-600/20">
                         <i data-lucide="file-text" class="h-6 w-6 text-gray-400"></i>
                     </div>
-                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">7</div>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">{{ stats.documents }}</div>
                     <div class="text-sm text-gray-400">Pièces Justificatives</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- À PROPOS -->
     <section id="a-propos" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -341,7 +219,7 @@
                         <div class="text-center mb-8">
                             <span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-dark-border mb-4">
                                 <i data-lucide="scale" class="h-4 w-4 text-benin-green"></i>
-                                Association Éthique Juridique 2.0 Internationale
+                                {{ association.nom }}
                             </span>
                             <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                                 <span class="text-gradient">À Propos</span>
@@ -357,7 +235,7 @@
                                 Notre Mission
                             </h3>
                             <p class="text-gray-400 leading-relaxed mb-4">
-                                L'association <strong class="text-white">Éthique Juridique 2.0 Internationale</strong>,
+                                L'association <strong class="text-white">{{ association.nom }}</strong>,
                                 basée en France, se donne pour mission de dénoncer la déliquescence de la foi publique dans les pays
                                 d'Afrique francophone. Nous documentons et publions des cas avérés de faux documents
                                 administratifs, d'irrégularités judiciaires et d'impunité institutionnelle.
@@ -398,6 +276,7 @@
         </div>
     </section>
 
+    <!-- INSTITUTIONS DYNAMIQUES -->
     <section id="institutions" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -412,177 +291,47 @@
             </div>
 
             <div class="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {% for institution in institutions %}
                 <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
                     <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-green/20">
-                            <i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
+                        <div class="p-3 rounded-xl 
+                            {% if institution.type == 'Ministère' %}bg-benin-green/20
+                            {% elif institution.type == 'Tribunal' %}bg-benin-green/20
+                            {% elif institution.type == 'Police' or institution.type == 'Brigade' %}bg-benin-red/20
+                            {% else %}bg-benin-yellow/20{% endif %}">
+                            <i data-lucide="
+                                {% if institution.type == 'Ministère' %}landmark
+                                {% elif institution.type == 'Tribunal' %}scale
+                                {% elif institution.type == 'Police' or institution.type == 'Brigade' %}shield
+                                {% else %}building-2{% endif %}" 
+                                class="h-6 w-6 
+                                {% if institution.type == 'Ministère' or institution.type == 'Tribunal' %}text-benin-green
+                                {% elif institution.type == 'Police' or institution.type == 'Brigade' %}text-benin-red
+                                {% else %}text-benin-yellow{% endif %}">
+                            </i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Ministère</span>
-                            <h3 class="font-semibold group-hover:text-benin-green transition-colors">
-                                Ministère de la Justice
-                            </h3>
+                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">{{ institution.type }}</span>
+                            <h3 class="font-semibold group-hover:text-benin-green transition-colors">{{ institution.nom }}</h3>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
                         <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
+                        <span class="truncate">{{ institution.localisation }}</span>
                     </div>
                     <div class="flex items-center gap-4 text-sm">
                         <div class="flex items-center gap-1 text-benin-red">
                             <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
+                            <span>{{ institution.cas }} cas</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-red/20">
-                            <i data-lucide="shield" class="h-6 w-6 text-benin-red"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Brigade de Police</span>
-                            <h3 class="font-semibold">
-                                Brigade anti criminalité (BAC)
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-yellow/20">
-                            <i data-lucide="lock" class="h-6 w-6 text-benin-yellow"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Autorité</span>
-                            <h3 class="font-semibold">
-                                APDP
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-green/20">
-                            <i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Barreau</span>
-                            <h3 class="font-semibold">
-                                Barreau du Bénin
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-green/20">
-                            <i data-lucide="landmark" class="h-6 w-6 text-benin-green"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Ministère</span>
-                            <h3 class="font-semibold">
-                                Ministère des Finances
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-red/20">
-                            <i data-lucide="briefcase" class="h-6 w-6 text-benin-red"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Cellule</span>
-                            <h3 class="font-semibold">
-                                Centif
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-green/20">
-                            <i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Tribunal</span>
-                            <h3 class="font-semibold">
-                                Tribunal de Cotonou - 3ème Chambre
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                        <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-                        <span class="truncate">Cotonou, Bénin</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-1 text-benin-red">
-                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                            <span>1 cas</span>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
+    <!-- PERSONNALITÉS DYNAMIQUES -->
     <section id="personnalites" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-red/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -597,6 +346,7 @@
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {% for personne in personnalites %}
                 <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300 cursor-pointer">
                     <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
                     <div class="p-6">
@@ -604,114 +354,32 @@
                             <div class="h-20 w-20 rounded-full object-cover mb-4 border-2 border-benin-red bg-benin-red/20 flex items-center justify-center">
                                 <i data-lucide="user" class="h-10 w-10 text-benin-red"></i>
                             </div>
-                            <h3 class="font-semibold text-lg">Aubierge Hungbo Kploca</h3>
+                            <h3 class="font-semibold text-lg">{{ personne.nom }}</h3>
                             <div class="flex items-center gap-2 mt-2">
                                 <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-                                <span class="text-sm text-gray-400">Magistrate</span>
+                                <span class="text-sm text-gray-400">{{ personne.role }}</span>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <div class="flex items-center justify-between">
-                                <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
+                                <span class="px-2 py-1 text-xs rounded-full status-{{ personne.statut|lower }}">{{ personne.statut }}</span>
                                 <div class="flex items-center gap-1 text-sm text-benin-red">
                                     <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                                    <span>CRITIQUE</span>
+                                    <span>{{ personne.niveau }}</span>
                                 </div>
                             </div>
                             <p class="text-xs text-gray-400">
-                                Signataire du jugement 114/14/3ème CH-EP du 31 octobre 2014
+                                {{ personne.description }}
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300 cursor-pointer">
-                    <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-                    <div class="p-6">
-                        <div class="flex flex-col items-center text-center mb-4">
-                            <div class="h-20 w-20 rounded-full object-cover mb-4 border-2 border-benin-red bg-benin-red/20 flex items-center justify-center">
-                                <i data-lucide="user" class="h-10 w-10 text-benin-red"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg">En attente</h3>
-                            <div class="flex items-center gap-2 mt-2">
-                                <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-                                <span class="text-sm text-gray-400">Commissaire de Police</span>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
-                                <div class="flex items-center gap-1 text-sm text-benin-red">
-                                    <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                                    <span>CRITIQUE</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-400">
-                                Tentative dilatoire pour etouffer une enquête de faux en écriture publique
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300 cursor-pointer">
-                    <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-                    <div class="p-6">
-                        <div class="flex flex-col items-center text-center mb-4">
-                            <div class="h-20 w-20 rounded-full object-cover mb-4 border-2 border-benin-red bg-benin-red/20 flex items-center justify-center">
-                                <i data-lucide="user" class="h-10 w-10 text-benin-red"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg">Félix A. BALLEY</h3>
-                            <div class="flex items-center gap-2 mt-2">
-                                <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-                                <span class="text-sm text-gray-400">Notaire</span>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
-                                <div class="flex items-center gap-1 text-sm text-benin-red">
-                                    <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                                    <span>CRITIQUE</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-400">
-                                Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016 et mandataire sans mandat
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300 cursor-pointer">
-                    <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
-                    <div class="p-6">
-                        <div class="flex flex-col items-center text-center mb-4">
-                            <div class="h-20 w-20 rounded-full object-cover mb-4 border-2 border-benin-red bg-benin-red/20 flex items-center justify-center">
-                                <i data-lucide="user" class="h-10 w-10 text-benin-red"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg"> Victorien FADE</h3>
-                            <div class="flex items-center gap-2 mt-2">
-                                <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-                                <span class="text-sm text-gray-400">Avocat</span>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="px-2 py-1 text-xs rounded-full status-open">Actif</span>
-                                <div class="flex items-center gap-1 text-sm text-benin-red">
-                                    <i data-lucide="alert-triangle" class="h-4 w-4"></i>
-                                    <span>CRITIQUE</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-400">
-                                Triple conflit d'intérêts et usage de faux acte authentique
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
+    <!-- DOCUMENTS DYNAMIQUES -->
     <section id="documents" class="py-20 relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -719,266 +387,63 @@
                     <span class="text-gradient">Pièces Justificatives</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
-                    Documents officiels et preuves téléchargeables concernant l'affaire FELIHO.
+                    Documents officiels et preuves téléchargeables concernant les affaires documentées.
                 </p>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
-                            <i data-lucide="file-warning" class="h-6 w-6 text-benin-red"></i>
+                {% for affaire in affaires %}
+                    {% for preuve in affaire.preuves %}
+                    <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 rounded-xl 
+                                {% if preuve.type == 'Jugement' %}bg-benin-red/20
+                                {% elif preuve.type == 'Lettre' %}bg-benin-red/20
+                                {% else %}bg-benin-yellow/20{% endif %} flex-shrink-0">
+                                <i data-lucide="
+                                    {% if preuve.type == 'Jugement' %}file-warning
+                                    {% elif preuve.type == 'PV' %}file-check
+                                    {% elif preuve.type == 'Certificat' %}file-check
+                                    {% elif preuve.type == 'Lettre' %}file-warning
+                                    {% else %}file-text{% endif %}" 
+                                    class="h-6 w-6 
+                                    {% if preuve.type == 'Jugement' or preuve.type == 'Lettre' %}text-benin-red
+                                    {% else %}text-benin-yellow{% endif %}">
+                                </i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">{{ preuve.type }}</span>
+                                <h3 class="font-semibold">{{ preuve.titre }}</h3>
+                            </div>
                         </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Jugement</span>
-                            <h3 class="font-semibold">Jugement 114/14/3ème CH-EP</h3>
+                        <p class="text-sm text-gray-400 mb-4">
+                            {{ preuve.description }}
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+                            <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                                <i data-lucide="calendar" class="h-3 w-3"></i>
+                                {{ preuve.date }}
+                            </div>
+                            <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                                <i data-lucide="file-text" class="h-3 w-3"></i>
+                                PDF
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Jugement du 31 octobre 2014 concernant la parcelle B lot 488
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            31/10/2014
+                        <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
+                            Affaire: {{ affaire.titre }}
                         </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/g27mo8rf9c7kmkksx7p5u/AJ0kH2AvV1mui9lzSUkA0pM?rlkey=idci7qjwjywg0kq4sr6isn4sn&st=rudyhdk1&dl=0" 
-   target="_blank" 
-   class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-    <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-</a>
-
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-                            <i data-lucide="file-check" class="h-6 w-6 text-benin-yellow"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Signification</span>
-                            <h3 class="font-semibold">Signification du jugement</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Signification du jugement frauduleux par avocat Victorien FADE
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            2014-2015
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
+                        <div class="flex gap-2">
+                            <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
+                                <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
+                            </button>
+                            <a href="{{ preuve.lien }}" target="_blank" 
+                               class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
+                                <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
+                            </a>
                         </div>
                     </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-green/20 flex-shrink-0">
-                            <i data-lucide="file-check" class="h-6 w-6 text-benin-green"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">PV</span>
-                            <h3 class="font-semibold">PV de compulsion</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        PV de compulsion du 19 décembre 2017 par Martin Jean D.C. GOUNADON
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            19/12/2017
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-                            <i data-lucide="file-check" class="h-6 w-6 text-benin-yellow"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Certificat</span>
-                            <h3 class="font-semibold">Certificat d'acquit de droit</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Certificat d'acquit de droit fraduleux du 20 octobre 2016 obtenu par le notaire Félix A. BALLEY
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            20/10/2016
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-                            <i data-lucide="file-check" class="h-6 w-6 text-benin-yellow"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Certificat</span>
-                            <h3 class="font-semibold">Acte de Décès J.F. FELIHO</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Déclaration de décès officielle: 3 décembre 2010
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            03/12/2010
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
-                            <i data-lucide="file-warning" class="h-6 w-6 text-benin-red"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Lettre</span>
-                            <h3 class="font-semibold">Lettre du Notaire GANGNITO</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Lettre du 19 septembre 2007 révélant le conflit d'intérêts de l'avocat FADE
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            19/09/2007
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
-                            <i data-lucide="file-warning" class="h-6 w-6 text-benin-red"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">Lettre</span>
-                            <h3 class="font-semibold">Demande de réouverture d'enquête</h3>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Lettre de demande de réouverture de l'enquête préliminaire au parquet spécial de la CRIET
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="calendar" class="h-3 w-3"></i>
-                            2025
-                        </div>
-                        <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
-                            <i data-lucide="file-text" class="h-3 w-3"></i>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
-                        Affaire: Succession FELIHO
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
-                            <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-                        </button>
-                        <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
-                            <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
-                        </a>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endfor %}
             </div>
 
             <div class="mt-8 text-center">
@@ -990,6 +455,7 @@
         </div>
     </section>
 
+    <!-- CAS DOCUMENTÉS DYNAMIQUES -->
     <section id="cas" class="py-20 relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -1002,22 +468,22 @@
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
+                {% for affaire in affaires %}
                 <div class="glass-card rounded-xl overflow-hidden hover:border-benin-green/50 transition-all duration-300">
                     <div class="p-6">
                         <div class="flex items-start justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 text-sm rounded-full status-open">En cours</span>
-                            <span class="text-benin-red font-semibold">● CRITIQUE</span>
+                            <span class="px-3 py-1 text-sm rounded-full status-{{ affaire.statut|lower|replace(' ', '-') }}">{{ affaire.statut }}</span>
+                            <span class="text-benin-red font-semibold">● {{ affaire.niveau }}</span>
                         </div>
                         <h3 class="text-xl font-bold mb-4">
-                            Affaire Succession Jean Florentin FELIHO - Faux manifestes dans des actes authentiques
+                            {{ affaire.titre }}
                         </h3>
                         <p class="text-gray-400 mb-6">
-                            Cette affaire met en lumière l'existence de cinq versions officielles incompatibles produites par des officiers publics béninois.
-                            Trois catégories d'officiers publics et auxiliaires de justice - magistrat, avocat, notaire - apparaissent directement impliqués
-                            dans la production et/ou l'usage d'actes officiels béninois contradictoires.
+                            {{ affaire.resume }}
                         </p>
 
+                        <!-- Tableau des preuves -->
                         <div class="overflow-x-auto mb-6">
                             <table class="w-full text-sm">
                                 <thead>
@@ -1029,30 +495,18 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-dark-border">
+                                    {% for preuve in affaire.preuves %}
                                     <tr>
-                                        <td class="py-3 px-4">Jugement 114/14/3ème CH-EP (31/10/2014)</td>
-                                        <td class="py-3 px-4">Constate legs parcelle B lot 488</td>
-                                        <td class="py-3 px-4 text-benin-red">Parcelle inexistante</td>
-                                        <td class="py-3 px-4">Mme Aubierge Hungbo Kploca</td>
+                                        <td class="py-3 px-4">{{ preuve.type }} {{ preuve.titre }}</td>
+                                        <td class="py-3 px-4">{{ preuve.description }}</td>
+                                        <td class="py-3 px-4 text-benin-red">{{ preuve.anomalie }}</td>
+                                        <td class="py-3 px-4">
+                                            {% for personne in personnalites %}
+                                                {% if personne.affaireId == affaire.id %}{{ personne.nom }}{% if not loop.last %}, {% endif %}{% endif %}
+                                            {% endfor %}
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td class="py-3 px-4">Certificat d'acquit (20/10/2016)</td>
-                                        <td class="py-3 px-4">Décès le 10 juin 2016</td>
-                                        <td class="py-3 px-4 text-benin-red">Acte de décès: 3 déc. 2010 (6 ans d'écart)</td>
-                                        <td class="py-3 px-4">Notaire BALLEY</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3 px-4">Lettre GANGNITO (19/09/2007)</td>
-                                        <td class="py-3 px-4">Révèle mandat FADE</td>
-                                        <td class="py-3 px-4 text-benin-red">Triple conflit d'intérêts</td>
-                                        <td class="py-3 px-4">Avocat FADE</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3 px-4">PV de compulsion (19/12/2017)</td>
-                                        <td class="py-3 px-4">Constate existence parcelle</td>
-                                        <td class="py-3 px-4 text-benin-red">Parcelle inexistante</td>
-                                        <td class="py-3 px-4">Martin Jean D.C. GOUNADON</td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -1060,19 +514,19 @@
                         <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="calendar" class="h-3 w-3"></i>
-                                31/10/2014
+                                {{ affaire.date }}
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="building-2" class="h-3 w-3"></i>
-                                Tribunal de Cotonou
+                                {{ affaire.institutions|join(', ') }}
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="users" class="h-3 w-3"></i>
-                                4 personnes
+                                {{ affaire.personnes|length }} personnes
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="file-text" class="h-3 w-3"></i>
-                                7 documents
+                                {{ affaire.documents }} documents
                             </div>
                         </div>
 
@@ -1083,10 +537,12 @@
                         </a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
+    <!-- MENTIONS LÉGALES DYNAMIQUES -->
     <section id="mentions-legales" class="py-16 relative">
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto glass-card rounded-xl overflow-hidden">
@@ -1108,13 +564,12 @@
                                 Éditeur du site
                             </h3>
                             <p class="text-gray-400">
-                                <strong>Éthique Juridique 2.0 Internationale (EJI.2.0 Internationale)</strong><br>
+                                <strong>{{ association.nom }} (EJI.2.0 Internationale)</strong><br>
                                 Association loi 1901 déclarée à la Préfecture de Créteil<br>
-                                RNA : W941020107<br>
-                                Siège social : 60 rue G. EIFFEL, 94000 Créteil<br>
-                                Tél. : +33 1 48 98 02 07<br>
-                                Email : <a href="mailto:contact@eji2.org" class="text-benin-green hover:underline">contact@eji2.org</a><br>
-                                Site institutionnel : <a href="https://eji2.org" target="_blank" class="text-benin-green hover:underline">https://eji2.org</a>
+                                RNA : {{ association.rna }}<br>
+                                Siège social : {{ association.siege }}<br>
+                                Email : <a href="mailto:{{ association.email }}" class="text-benin-green hover:underline">{{ association.email }}</a><br>
+                                Site institutionnel : <a href="{{ association.site }}" target="_blank" class="text-benin-green hover:underline">{{ association.site }}</a>
                             </p>
                         </div>
 
@@ -1134,20 +589,9 @@
                                 Hébergement
                             </h3>
                             <p class="text-gray-400">
-                                <strong>Manus</strong><br>
-                                Plateforme de développement web cloud<br>
-                                Accessible via observatoire.benin.org
-                            </p>
-                        </div>
-
-                        <div class="p-4 bg-dark-muted/30 rounded-lg">
-                            <h3 class="font-semibold mb-3 flex items-center gap-2">
-                                <i data-lucide="info" class="h-5 w-5 text-benin-green"></i>
-                                Objet du site
-                            </h3>
-                            <p class="text-gray-400">
-                                Promotion de l'éthique 2.0 en IA et technologies.<br>
-                                Ce site s'inscrit dans un combat citoyen contre la déliquescence de la foi publique au Bénin.
+                                <strong>GitHub Pages</strong><br>
+                                Plateforme d'hébergement statique<br>
+                                Dernière mise à jour : {{ last_updated }}
                             </p>
                         </div>
                     </div>
@@ -1156,6 +600,7 @@
         </div>
     </section>
 
+    <!-- PARTAGER -->
     <section id="partager" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -1214,6 +659,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="border-t border-dark-border bg-dark-card/50 mt-auto">
         <div class="container mx-auto px-4 py-12">
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -1229,21 +675,14 @@
                         Association basée en France, dédiée à la promotion de l'éthique juridique
                         et à la défense de la foi publique en Afrique francophone.
                     </p>
-                    <div class="flex items-center gap-2 text-sm text-gray-400">
-                        <i data-lucide="map-pin" class="h-4 w-4"></i>
-                        <span>France</span>
-                    </div>
                 </div>
 
                 <div class="space-y-4">
                     <h4 class="font-semibold text-white">Navigation</h4>
                     <nav class="flex flex-col gap-2">
-                        <a href="#accueil" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Accueil</a>
-                        <a href="#institutions" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Institutions</a>
-                        <a href="#personnalites" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Personnalités</a>
-                        <a href="#documents" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Documents</a>
-                        <a href="#cas" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Cas Documentés</a>
-                        <a href="#mentions-legales" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Mentions Légales</a>
+                        {% for item in navigation %}
+                        <a href="#{{ item.id }}" class="text-sm text-gray-400 hover:text-benin-green transition-colors">{{ item.label }}</a>
+                        {% endfor %}
                     </nav>
                 </div>
 
@@ -1252,7 +691,6 @@
                     <nav class="flex flex-col gap-2">
                         <a href="#mentions-legales" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Avertissement légal</a>
                         <a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Politique de confidentialité</a>
-                        <a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Conditions d'utilisation</a>
                         <a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Droit de réponse</a>
                     </nav>
                 </div>
@@ -1261,18 +699,11 @@
                     <h4 class="font-semibold text-white">Contact</h4>
                     <div class="flex items-center gap-2 text-sm text-gray-400">
                         <i data-lucide="mail" class="h-4 w-4"></i>
-                        <span>contact@ethique-juridique.org</span>
+                        <span>{{ association.email }}</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-400">
                         <i data-lucide="globe" class="h-4 w-4"></i>
-                        <span>www.ethique-juridique.org</span>
-                    </div>
-                    <div class="p-3 bg-dark-muted/50 rounded-lg">
-                        <p class="text-xs text-gray-400 flex items-start gap-2">
-                            <i data-lucide="shield" class="h-4 w-4 flex-shrink-0 text-benin-green"></i>
-                            Toutes les informations publiées sont basées sur des documents officiels
-                            et des faits vérifiables.
-                        </p>
+                        <span>{{ association.site }}</span>
                     </div>
                 </div>
             </div>
@@ -1281,13 +712,12 @@
 
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-4 text-sm text-gray-400">
-                    <span>© 2025 Éthique Juridique 2.0 Internationale</span>
+                    <span>© {{ current_year }} {{ association.nom }}</span>
                     <span class="hidden sm:inline">•</span>
                     <span class="flex items-center gap-1">
                         Fait avec <span class="text-benin-red">❤</span> pour la justice
                     </span>
                 </div>
-
                 <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i data-lucide="alert-triangle" class="h-4 w-4 text-benin-yellow"></i>
                     <span>Veille Citoyenne Active</span>
@@ -1347,7 +777,6 @@
             }, 2000);
         }
 
-        // Update share URL input
         document.getElementById('share-url').value = shareUrl;
     </script>
 </body>
