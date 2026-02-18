@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éthique Juridique 2.0 - Veille Citoyenne</title>
+    <!-- ... (votre CSS actuel) ... -->
+</head>
+<body>
+    <!-- Section Statistiques dynamiques -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-bold text-gradient">{{ stats.affaires }}</div>
+                    <div class="text-sm text-gray-400">Affaires Documentées</div>
+                </div>
+                <!-- ... autres stats ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Affaires générée dynamiquement -->
+    <section id="cas">
+        {% for affaire in affaires %}
+        <div class="glass-card rounded-xl overflow-hidden" data-id="{{ affaire.id }}">
+            <div class="p-6">
+                <h3>{{ affaire.titre }}</h3>
+                <p>{{ affaire.resume }}</p>
+                
+                <!-- Tableau des preuves -->
+                <table>
+                    {% for preuve in affaire.preuves %}
+                    <tr>
+                        <td>{{ preuve.type }}</td>
+                        <td>{{ preuve.titre }}</td>
+                        <td class="text-benin-red">{{ preuve.anomalie }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                
+                <a href="{{ affaire.preuves[0].lien }}" target="_blank">Voir les preuves</a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Footer avec données dynamiques -->
+    <footer>
+        <p>© {{ current_year }} {{ association.nom }}</p>
+        <p>RNA: {{ association.rna }}</p>
+    </footer>
+</body>
+</html>
