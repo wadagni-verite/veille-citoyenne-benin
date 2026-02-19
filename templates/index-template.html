@@ -44,10 +44,14 @@
         .status-en-cours { background: rgba(0, 135, 81, 0.2); color: #00c96a; border: 1px solid rgba(0, 135, 81, 0.4); }
         html { scroll-behavior: smooth; }
         .hero-circle { border: 1px solid rgba(0, 135, 81, 0.1); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        .animate-fade-out { animation: fadeOut 0.3s ease-out forwards; }
     </style>
 </head>
 <body class="bg-dark-bg text-white">
-    
+
     <!-- HEADER -->
     <header class="sticky top-0 z-50 glass">
         <div class="container mx-auto px-4">
@@ -277,7 +281,7 @@
                 {% for institution in institutions %}
                 <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer">
                     <div class="flex items-start gap-4 mb-4">
-                        <div class="p-3 rounded-xl 
+                        <div class="p-3 rounded-xl
                             {% if institution.type in ['Ministère', 'Tribunal', 'Barreau'] %}bg-benin-green/20
                             {% elif institution.type in ['Brigade de Police', 'Cellule'] %}bg-benin-red/20
                             {% else %}bg-benin-yellow/20{% endif %}">
@@ -287,8 +291,8 @@
                                 {% elif institution.type == 'Barreau' %}scale
                                 {% elif institution.type == 'Brigade de Police' %}shield
                                 {% elif institution.type == 'Cellule' %}briefcase
-                                {% else %}lock{% endif %}" 
-                                class="h-6 w-6 
+                                {% else %}lock{% endif %}"
+                                class="h-6 w-6
                                 {% if institution.type in ['Ministère', 'Tribunal', 'Barreau'] %}text-benin-green
                                 {% elif institution.type in ['Brigade de Police', 'Cellule'] %}text-benin-red
                                 {% else %}text-benin-yellow{% endif %}">
@@ -380,7 +384,7 @@
                     {% for preuve in affaire.preuves %}
                     <div class="glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300">
                         <div class="flex items-start gap-4 mb-4">
-                            <div class="p-3 rounded-xl 
+                            <div class="p-3 rounded-xl
                                 {% if preuve.type in ['Jugement', 'Lettre'] %}bg-benin-red/20
                                 {% else %}bg-benin-yellow/20{% endif %} flex-shrink-0">
                                 <i data-lucide="
@@ -389,8 +393,8 @@
                                     {% elif preuve.type == 'Certificat' %}file-check
                                     {% elif preuve.type == 'Lettre' %}file-warning
                                     {% elif preuve.type == 'Signification' %}file-check
-                                    {% else %}file-text{% endif %}" 
-                                    class="h-6 w-6 
+                                    {% else %}file-text{% endif %}"
+                                    class="h-6 w-6
                                     {% if preuve.type in ['Jugement', 'Lettre'] %}text-benin-red
                                     {% else %}text-benin-yellow{% endif %}">
                                 </i>
@@ -420,7 +424,7 @@
                             <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
                                 <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
                             </button>
-                            <a href="{{ preuve.lien }}" target="_blank" 
+                            <a href="{{ preuve.lien }}" target="_blank"
                                class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
                                 <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
                             </a>
@@ -603,42 +607,46 @@
 
                         <p class="text-gray-400 mb-6 max-w-xl mx-auto">
                             La transparence et la justice passent par la diffusion de l'information.
-                            Partagez ces révélations pour éveiller les consciences.
+                            Partagez ces révélations pour éveiller les consciences et faire pression pour la vérité.
                         </p>
 
                         <div class="flex flex-wrap justify-center gap-3 mb-6">
-                            <button onclick="shareTwitter()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-black hover:text-white transition-all duration-300">
+                            <button onclick="shareOnTwitter()" aria-label="Partager sur Twitter" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-black hover:text-white transition-all duration-300">
                                 <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                 Twitter / X
                             </button>
-                            <button onclick="shareFacebook()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            <button onclick="shareOnFacebook()" aria-label="Partager sur Facebook" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-600 hover:text-white transition-all duration-300">
                                 <i data-lucide="facebook" class="h-5 w-5"></i>
                                 Facebook
                             </button>
-                            <button onclick="shareLinkedIn()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-700 hover:text-white transition-all duration-300">
+                            <button onclick="shareOnLinkedIn()" aria-label="Partager sur LinkedIn" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-700 hover:text-white transition-all duration-300">
                                 <i data-lucide="linkedin" class="h-5 w-5"></i>
                                 LinkedIn
                             </button>
-                            <button onclick="shareWhatsApp()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-green-600 hover:text-white transition-all duration-300">
+                            <button onclick="shareOnWhatsApp()" aria-label="Partager sur WhatsApp" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-green-600 hover:text-white transition-all duration-300">
                                 <i data-lucide="message-circle" class="h-5 w-5"></i>
                                 WhatsApp
                             </button>
-                            <button onclick="shareEmail()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-gray-600 hover:text-white transition-all duration-300">
+                            <button onclick="shareOnTelegram()" aria-label="Partager sur Telegram" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-500 hover:text-white transition-all duration-300">
+                                <i data-lucide="send" class="h-5 w-5"></i>
+                                Telegram
+                            </button>
+                            <button onclick="shareByEmail()" aria-label="Partager par email" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-gray-600 hover:text-white transition-all duration-300">
                                 <i data-lucide="mail" class="h-5 w-5"></i>
                                 Email
                             </button>
                         </div>
 
                         <div class="flex items-center gap-2 p-3 bg-dark-muted/50 rounded-lg">
-                            <input type="text" id="share-url" value="https://observatoire.benin.org" readonly class="flex-1 bg-transparent text-sm text-gray-400 outline-none">
-                            <button onclick="copyLink()" id="copy-btn" class="px-3 py-1 text-sm rounded bg-dark-border hover:bg-benin-green hover:text-white transition-all">
+                            <input type="text" id="share-url-input" value="" readonly class="flex-1 bg-transparent text-sm text-gray-400 outline-none">
+                            <button onclick="copyLink()" id="copy-btn-final" class="px-3 py-1 text-sm rounded bg-dark-border hover:bg-benin-green hover:text-white transition-all">
                                 <i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>
                                 Copier
                             </button>
                         </div>
 
                         <span class="inline-block mt-6 px-3 py-1 text-xs rounded-full border border-dark-border">
-                            Partage responsable - Diffusez la vérité
+                            Partage responsable - Diffusez la vérité pour la justice
                         </span>
                     </div>
                 </div>
@@ -714,52 +722,88 @@
     </footer>
 
     <script>
+        // Initialisation des icônes Lucide
         lucide.createIcons();
-        
+
+        // Gestion du menu mobile
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const nav = document.getElementById('mobile-nav');
             nav.classList.toggle('hidden');
         });
 
-        const shareUrl = window.location.href;
-        const shareText = '🇧🇯 Veille Citoyenne de la Foi Publique au Bénin - Dénonciation des faux documents administratifs et de l\'impunité institutionnelle. #Bénin #Justice #Transparence';
+        // Configuration du partage
+        const currentUrl = window.location.origin + window.location.pathname + '?utm_source=share&utm_medium=social';
+        const twitterMsg = encodeURIComponent("Alerte Bénin : Failles critiques et abus d'autorité (APDP/CENTIF). Consultez les preuves : #VeilleCitoyenneBénin #FoiPublique");
+        const whatsappMsg = encodeURIComponent("Dossier Succession FELIHO : Preuves d'inertie de la CENTIF (1,5 md FCFA) et menaces de l'APDP disponibles ici. Partagez pour faire connaître la vérité : ");
+        const emailSubject = encodeURIComponent("Alerte Bénin : Preuves de défaillances institutionnelles");
+        const emailBody = encodeURIComponent("Bonjour,\n\nJe vous partage ce dossier crucial sur les défaillances institutionnelles au Bénin (CENTIF/APDP) :\n" + currentUrl + "\n\nCordialement,");
 
-        function shareTwitter() {
-            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+        // Afficher l'URL dans l'input
+        document.getElementById('share-url-input').value = currentUrl;
+
+        // Fonctions de partage
+        function shareOnTwitter() {
+            window.open(`https://twitter.com/intent/tweet?text=${twitterMsg}&url=${encodeURIComponent(currentUrl)}`, '_blank');
+            showFeedback("Partage sur Twitter ouvert !");
         }
 
-        function shareFacebook() {
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, '_blank');
+            showFeedback("Partage sur Facebook ouvert !");
         }
 
-        function shareLinkedIn() {
-            window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+        function shareOnLinkedIn() {
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`, '_blank');
+            showFeedback("Partage sur LinkedIn ouvert !");
         }
 
-        function shareWhatsApp() {
-            window.open('https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + shareUrl), '_blank');
+        function shareOnWhatsApp() {
+            window.open(`https://wa.me/?text=${whatsappMsg} ${encodeURIComponent(currentUrl)}`, '_blank');
+            showFeedback("Partage sur WhatsApp ouvert !");
         }
 
-        function shareEmail() {
-            window.open('mailto:?subject=' + encodeURIComponent('Éthique Juridique 2.0 Bénin') + '&body=' + encodeURIComponent(shareText + '\n\n' + shareUrl), '_blank');
+        function shareOnTelegram() {
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${whatsappMsg}`, '_blank');
+            showFeedback("Partage sur Telegram ouvert !");
+        }
+
+        function shareByEmail() {
+            window.location.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+            showFeedback("Fenêtre d'email ouverte !");
         }
 
         function copyLink() {
-            const input = document.getElementById('share-url');
-            input.select();
-            document.execCommand('copy');
-            const btn = document.getElementById('copy-btn');
-            btn.innerHTML = '<i data-lucide="check" class="h-4 w-4 inline mr-1"></i>Copié!';
-            btn.classList.add('bg-benin-green', 'text-white');
-            lucide.createIcons();
-            setTimeout(() => {
-                btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier';
-                btn.classList.remove('bg-benin-green', 'text-white');
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                const btn = document.getElementById('copy-btn-final');
+                btn.innerHTML = '<i data-lucide="check" class="h-4 w-4 inline mr-1"></i>Copié !';
+                btn.classList.add('bg-benin-green', 'text-white');
                 lucide.createIcons();
-            }, 2000);
+                showFeedback("Lien copié dans le presse-papiers !");
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier';
+                    btn.classList.remove('bg-benin-green', 'text-white');
+                    lucide.createIcons();
+                }, 2000);
+            }).catch(err => {
+                console.error('Erreur lors de la copie : ', err);
+                showFeedback("Erreur lors de la copie", true);
+            });
         }
 
-        document.getElementById('share-url').value = shareUrl;
+        function showFeedback(message, isError = false) {
+            const feedback = document.createElement('div');
+            feedback.textContent = message;
+            feedback.classList.add('fixed', 'bottom-4', 'left-1/2', 'transform', '-translate-x-1/2', 'px-4', 'py-2', 'rounded-lg', 'text-sm', 'z-50', 'animate-fade-in');
+            feedback.style.background = isError ? '#E8112D' : '#008751';
+            feedback.style.color = 'white';
+            document.body.appendChild(feedback);
+
+            setTimeout(() => {
+                feedback.classList.add('animate-fade-out');
+                setTimeout(() => feedback.remove(), 500);
+            }, 2000);
+        }
     </script>
 </body>
 </html>
