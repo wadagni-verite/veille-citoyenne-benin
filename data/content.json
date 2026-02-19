@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastUpdated": "2025-02-19",
-    "version": "1.1"
+    "version": "1.2"
   },
   "association": {
     "nom": "Éthique Juridique 2.0 Internationale",
@@ -25,98 +25,54 @@
     "institutions": 7,
     "documents": 9
   },
-  "institutions": [
-    {
-      "nom": "Ministère de la Justice",
-      "type": "Ministère",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "Brigade anti criminalité (BAC)",
-      "type": "Brigade de Police",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "APDP",
-      "type": "Autorité",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "Barreau du Bénin",
-      "type": "Barreau",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "Ministère des Finances",
-      "type": "Ministère",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "Centif",
-      "type": "Cellule",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    },
-    {
-      "nom": "Tribunal de Cotonou - 3ème Chambre",
-      "type": "Tribunal",
-      "cas": 1,
-      "localisation": "Cotonou, Bénin"
-    }
-  ],
   "personnalites": [
     {
+      "id": "pers-kploca",
       "nom": "Aubierge Hungbo Kploca",
       "role": "Magistrate",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
       "description": "Constate comme vrai des faits faux, dans son jugement 114/14/3ème CH-EP du 31 octobre 2014"
     },
     {
+      "id": "pers-police",
       "nom": "En attente",
       "role": "Commissaire de Police",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
       "description": "Tentative dilatoire pour étouffer une enquête de faux en écriture publique"
     },
     {
+      "id": "pers-balley",
       "nom": "Félix A. BALLEY",
       "role": "Notaire",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
       "description": "Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016 et mandataire sans mandat"
     },
     {
+      "id": "pers-fade",
       "nom": "Victorien FADE",
       "role": "Avocat",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
       "description": "Triple conflit d'intérêts et usage de faux acte authentique"
     },
     {
+      "id": "pers-hounkponou",
       "nom": "Luciano Hounkponou",
       "role": "Responsable APDP",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
-      "description": "Arbitraire, violation de la loi sur le numérique, menace écrite contre la victime dans le dossier n°2024-C/010/DST/SCC/CJT"
+      "description": "Arbitraire, violation de la loi sur le numérique, menace écrite contre la victime"
     },
     {
+      "id": "pers-bello",
       "nom": "Abdou Rafiou BELLO",
       "role": "Président CENTIF-Bénin",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "affaireId": "feliho-2014",
-      "description": "Président de la CENTIF interpellé pour l'inertie du service face aux soupçons de blanchiment dans la succession."
+      "description": "Président de la CENTIF interpellé pour l'inertie du service face aux soupçons de blanchiment."
     }
   ],
   "affaires": [
@@ -126,82 +82,37 @@
       "statut": "En cours",
       "niveau": "CRITIQUE",
       "date": "31/10/2014",
-      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles produites par des officiers publics béninois. Trois catégories d'officiers publics et auxiliaires de justice - magistrat, avocat, notaire - apparaissent directement impliqués dans la production et/ou l'usage d'actes officiels béninois contradictoires.",
-      "institutions": ["Tribunal de Cotonou", "Ministère de la Justice", "APDP", "CENTIF"],
-      "personnes": ["Aubierge Hungbo Kploca", "Victorien FADE", "Félix A. BALLEY", "Luciano Hounkponou", "Abdou Rafiou BELLO"],
-      "documents": 9,
+      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles produites par des officiers publics béninois.",
       "preuves": [
         {
           "type": "Jugement",
           "titre": "Jugement 114/14/3ème CH-EP",
-          "date": "31/10/2014",
-          "description": "Constate legs parcelle B lot 488",
-          "lien": "https://www.dropbox.com/scl/fo/g27mo8rf9c7kmkksx7p5u/AJ0kH2AvV1mui9lzSUkA0pM?rlkey=idci7qjwjywg0kq4sr6isn4sn&st=rudyhdk1&dl=0",
-          "anomalie": "Parcelle inexistante"
+          "anomalie": "Parcelle inexistante",
+          "responsableId": "pers-kploca"
         },
         {
           "type": "Signification",
           "titre": "Signification du jugement",
-          "date": "2014-2015",
-          "description": "Signification du jugement frauduleux par avocat Victorien FADE",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "Conflit d'intérêts"
-        },
-        {
-          "type": "PV",
-          "titre": "PV de compulsion",
-          "date": "19/12/2017",
-          "description": "PV de compulsion du 19 décembre 2017 par Martin Jean D.C. GOUNADON",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "Parcelle inexistante"
+          "anomalie": "Conflit d'intérêts",
+          "responsableId": "pers-fade"
         },
         {
           "type": "Certificat",
           "titre": "Certificat d'acquit de droit",
-          "date": "20/10/2016",
-          "description": "Certificat d'acquit de droit frauduleux du 20 octobre 2016 obtenu par le notaire Félix A. BALLEY",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "Faux et usage de faux"
-        },
-        {
-          "type": "Certificat",
-          "titre": "Acte de Décès J.F. FELIHO",
-          "date": "03/12/2010",
-          "description": "Déclaration de décès officielle: 3 décembre 2010",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "Contradiction avec certificat 2016"
-        },
-        {
-          "type": "Lettre",
-          "titre": "Lettre du Notaire GANGNITO",
-          "date": "19/09/2007",
-          "description": "Lettre du 19 septembre 2007 révélant le conflit d'intérêts de l'avocat FADE",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "Conflit d'intérêts avéré"
-        },
-        {
-          "type": "Lettre",
-          "titre": "Demande de réouverture d'enquête",
-          "date": "2025",
-          "description": "Lettre de demande de réouverture de l'enquête préliminaire au parquet spécial de la CRIET",
-          "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
-          "anomalie": "En attente de réponse"
+          "anomalie": "Faux et usage de faux",
+          "responsableId": "pers-balley"
         },
         {
           "type": "E-mail / Menace",
-          "titre": "Réponse APDP - Dossier n°2024-C/010/DST/SCC/CJT",
-          "date": "16/12/2024",
-          "description": "Preuve d'intimidation institutionnelle : suite à une dénonciation de violation de la loi sur le numérique (Art. 437), l'APDP répond par des menaces écrites : 'vous répondrez de vos actes en temps opportun'. Ce document illustre une atteinte au droit constitutionnel à la protection des données (Art. 35).",
-          "lien": "https://www.dropbox.com/scl/fo/vgqpal655qljrlazcsh22/ANGjzztIa67ZPJUXcnINQuU?rlkey=0bu1b3ox70ttsugix0nei7scj&st=qwoerb6q&dl=1",
-          "anomalie": "Abus d'autorité et intimidation"
+          "titre": "Réponse APDP",
+          "anomalie": "Abus d'autorité et intimidation",
+          "responsableId": "pers-hounkponou"
         },
         {
           "type": "Rapport / Alerte",
-          "titre": "Inertie CENTIF : Risque Systémique LBC/FT",
-          "date": "11/09/2025",
-          "description": "Dossier démontrant une sous-évaluation immobilière de plus de 1,5 milliard FCFA. Malgré l'évidence des faits, l'inertie de la CENTIF (violation de l'Art. 29 de la loi 2006-14) expose le Bénin à un risque de placement sur la 'liste grise' du GAFI/GIABA pour impunité.",
-          "lien": "https://www.dropbox.com/scl/fo/xm3epa7cidg45xh491vhp/ADPWxUWVmJj3gBjJFjPTnd0?rlkey=5oidc43ukz4u13zmo3wilq232&st=ufftljgl&dl=1",
-          "anomalie": "Violation de l'obligation de transmission au Parquet"
+          "titre": "Inertie CENTIF",
+          "anomalie": "Violation de l'obligation de transmission",
+          "responsableId": "pers-bello"
         }
       ]
     }
