@@ -29,253 +29,182 @@ muted: '#2a3d32'
 <script src="https://unpkg.com/lucide@latest"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* {
-font-family: 'Inter', sans-serif;
-}
-/* Custom scrollbar */
-::-webkit-scrollbar {
-width: 8px;
-height: 8px;
-}
-::-webkit-scrollbar-track {
-background: #141c18;
-}
-::-webkit-scrollbar-thumb {
-background: #2a3d32;
-border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-background: #3a5242;
-}
-/* Glassmorphism */
-.glass {
-background: rgba(20, 28, 24, 0.85);
-backdrop-filter: blur(12px);
-border: 1px solid rgba(42, 61, 50, 0.5);
-}
-.glass-card {
-background: rgba(20, 28, 24, 0.9);
-backdrop-filter: blur(16px);
-border: 1px solid rgba(42, 61, 50, 0.6);
-}
-/* Text gradient */
-.text-gradient {
-background: linear-gradient(135deg, #008751 0%, #FCD116 50%, #E8112D
-100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-/* Glow effects */
-.glow-green {
-box-shadow: 0 0 20px rgba(0, 135, 81, 0.4), 0 0 40px rgba(0, 135, 81, 0.2);
-}
-/* Animated border */
-.animated-border {
-position: relative;
-overflow: hidden;
-}
-.animated-border::before {
-content: '';
-position: absolute;
-inset: 0;
-padding: 2px;
-border-radius: inherit;
-background: linear-gradient(135deg, #008751, #FCD116, #E8112D, #008751);
-background-size: 300% 300%;
-animation: gradient-border 6s ease infinite;
--webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
--webkit-mask-composite: xor;
-mask-composite: exclude;
-}
-@keyframes gradient-border {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
-}
-/* Pulse animation */
-.pulse-alert {
-animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-0%, 100% { opacity: 1; }
-50% { opacity: 0.5; }
-}
-/* Fade in animation */
-.fade-in {
-animation: fadeIn 0.6s ease-out forwards;
-}
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-/* Background grid */
-.bg-grid {
-background-image:
-linear-gradient(rgba(42, 61, 50, 0.3) 1px, transparent 1px),
-linear-gradient(90deg, rgba(42, 61, 50, 0.3) 1px, transparent 1px);
-background-size: 50px 50px;
-}
-/* Status badges */
-.status-open {
-background: rgba(0, 135, 81, 0.2);
-color: #00c96a;
-border: 1px solid rgba(0, 135, 81, 0.4);
-}
-.status-investigation {
-background: rgba(252, 209, 22, 0.2);
-color: #fcd116;
-border: 1px solid rgba(252, 209, 22, 0.4);
-}
-/* Smooth scroll */
-html {
-scroll-behavior: smooth;
-}
-/* Hero circles */
-.hero-circle {
-border: 1px solid rgba(0, 135, 81, 0.1);
-border-radius: 50%;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
+* { font-family: 'Inter', sans-serif; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #141c18; }
+::-webkit-scrollbar-thumb { background: #2a3d32; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3a5242; }
+.glass { background: rgba(20, 28, 24, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(42, 61, 50, 0.5); }
+.glass-card { background: rgba(20, 28, 24, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(42, 61, 50, 0.6); }
+.text-gradient { background: linear-gradient(135deg, #008751 0%, #FCD116 50%, #E8112D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.glow-green { box-shadow: 0 0 20px rgba(0, 135, 81, 0.4), 0 0 40px rgba(0, 135, 81, 0.2); }
+.animated-border { position: relative; overflow: hidden; }
+.animated-border::before { content: ''; position: absolute; inset: 0; padding: 2px; border-radius: inherit; background: linear-gradient(135deg, #008751, #FCD116, #E8112D, #008751); background-size: 300% 300%; animation: gradient-border 6s ease infinite; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+@keyframes gradient-border { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.pulse-alert { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.bg-grid { background-image: linear-gradient(rgba(42, 61, 50, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42, 61, 50, 0.3) 1px, transparent 1px); background-size: 50px 50px; }
+.status-open { background: rgba(0, 135, 81, 0.2); color: #00c96a; border: 1px solid rgba(0, 135, 81, 0.4); }
+.status-investigation { background: rgba(252, 209, 22, 0.2); color: #fcd116; border: 1px solid rgba(252, 209, 22, 0.4); }
+html { scroll-behavior: smooth; }
+.hero-circle { border: 1px solid rgba(0, 135, 81, 0.1); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 </style>
 </head>
 <body class="bg-dark-bg text-white">
+
+<!-- DONNÉES JSON -->
+<script>
+const siteData = {
+  "metadata": {
+    "lastUpdated": "2025-02-19",
+    "version": "1.2"
+  },
+  "association": {
+    "nom": "Éthique Juridique 2.0 Internationale",
+    "siege": "60 rue G. EIFFEL, 94000 Créteil",
+    "rna": "W941020107",
+    "email": "contact@eji2.org",
+    "site": "https://eji2.org"
+  },
+  "navigation": [
+    {"id": "accueil", "label": "Accueil", "icon": "shield"},
+    {"id": "institutions", "label": "Institutions", "icon": "building-2"},
+    {"id": "personnalites", "label": "Personnalités", "icon": "users"},
+    {"id": "documents", "label": "Documents", "icon": "file-text"},
+    {"id": "cas", "label": "Cas Documentés", "icon": "alert-triangle"},
+    {"id": "mentions-legales", "label": "Mentions Légales", "icon": "file-text"},
+    {"id": "partager", "label": "Partager", "icon": "share-2"}
+  ],
+  "statistiques": {
+    "affaires": 1,
+    "personnes": 6,
+    "institutions": 7,
+    "documents": 9
+  },
+  "institutions": [
+    {"nom": "Ministère de la Justice", "type": "Ministère", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "APDP", "type": "Autorité", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "Centif", "type": "Cellule", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "Tribunal de Cotonou", "type": "Tribunal", "cas": 1, "localisation": "Cotonou, Bénin"}
+  ],
+  "personnalites": [
+    {
+      "id": "pers-kploca",
+      "nom": "Aubierge Hungbo Kploca",
+      "role": "Magistrate",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "description": "Constate comme vrai des faits faux, dans son jugement 114/14/3ème CH-EP du 31 octobre 2014"
+    },
+    {
+      "id": "pers-balley",
+      "nom": "Félix A. BALLEY",
+      "role": "Notaire",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "description": "Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016"
+    },
+    {
+      "id": "pers-fade",
+      "nom": "Victorien FADE",
+      "role": "Avocat",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "description": "Triple conflit d'intérêts et usage de faux acte authentique"
+    },
+    {
+      "id": "pers-hounkponou",
+      "nom": "Luciano Hounkponou",
+      "role": "Responsable APDP",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "description": "Arbitraire, violation de la loi sur le numérique, menace écrite contre la victime"
+    },
+    {
+      "id": "pers-bello",
+      "nom": "Abdou Rafiou BELLO",
+      "role": "Président CENTIF-Bénin",
+      "statut": "Actif",
+      "niveau": "CRITIQUE",
+      "description": "Inertie face aux soupçons de blanchiment dans la succession."
+    }
+  ],
+  "affaires": [
+    {
+      "id": "feliho-2014",
+      "titre": "Affaire Succession Jean Florentin FELIHO",
+      "statut": "En cours",
+      "niveau": "CRITIQUE",
+      "date": "31/10/2014",
+      "resume": "Cinq versions officielles incompatibles produites par des officiers publics béninois.",
+      "preuves": [
+        {"type": "Jugement", "titre": "Jugement 114/14/3ème CH-EP", "anomalie": "Parcelle inexistante", "responsableId": "pers-kploca"},
+        {"type": "Signification", "titre": "Signification du jugement", "anomalie": "Conflit d'intérêts", "responsableId": "pers-fade"},
+        {"type": "Certificat", "titre": "Certificat d'acquit de droit", "anomalie": "Faux et usage de faux", "responsableId": "pers-balley"},
+        {"type": "E-mail / Menace", "titre": "Réponse APDP", "anomalie": "Abus d'autorité et intimidation", "responsableId": "pers-hounkponou"},
+        {"type": "Rapport / Alerte", "titre": "Inertie CENTIF", "anomalie": "Violation d'obligation légale", "responsableId": "pers-bello"}
+      ]
+    }
+  ]
+};
+</script>
+
 <header class="sticky top-0 z-50 glass">
 <div class="container mx-auto px-4">
 <div class="flex h-16 items-center justify-between">
 <a href="#accueil" class="flex items-center gap-3 group">
 <div class="relative">
-<i data-lucide="scale" class="h-8 w-8 text-benin-green
-group-hover:text-benin-yellow transition-colors"></i>
-<div class="absolute -top-1 -right-1 w-3 h-3 bg-benin-green rounded-full
-pulse-alert"></div>
+<i data-lucide="scale" class="h-8 w-8 text-benin-green group-hover:text-benin-yellow transition-colors"></i>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-benin-green rounded-full pulse-alert"></div>
 </div>
 <div class="flex flex-col">
-<span class="text-lg font-bold text-gradient">Éthique Juridique
-2.0</span>
+<span class="text-lg font-bold text-gradient" id="header-title">Éthique Juridique 2.0</span>
 <span class="text-xs text-gray-400">Bénin</span>
 </div>
 </a>
-<nav class="hidden lg:flex items-center gap-1">
-<a href="#accueil" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="shield" class="h-4 w-4"></i> Accueil
-</a>
-<a href="#institutions" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="building-2" class="h-4 w-4"></i> Institutions
-</a>
-<a href="#personnalites" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="users" class="h-4 w-4"></i> Personnalités
-</a>
-<a href="#documents" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="file-text" class="h-4 w-4"></i> Documents
-</a>
-<a href="#cas" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i> Cas Documentés
-</a>
-<a href="#mentions-legales" class="flex items-center gap-2 px-3 py-2
-text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg
-transition-all">
-<i data-lucide="file-text" class="h-4 w-4"></i> Mentions Légales
-</a>
-<a href="#partager" class="flex items-center gap-2 px-3 py-2 text-sm
-font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="share-2" class="h-4 w-4"></i> Partager
-</a>
+<nav class="hidden lg:flex items-center gap-1" id="desktop-nav">
+<!-- Généré dynamiquement -->
 </nav>
 <div class="flex items-center gap-4">
-<span class="hidden sm:flex items-center gap-2 px-3 py-1 text-sm
-rounded-full status-open pulse-alert">
+<span class="hidden sm:flex items-center gap-2 px-3 py-1 text-sm rounded-full status-open pulse-alert">
 <span class="w-2 h-2 bg-benin-green rounded-full"></span>
 Veille Active
 </span>
-<button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400
-hover:text-white">
+<button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white">
 <i data-lucide="menu" class="h-6 w-6"></i>
 </button>
 </div>
 </div>
 <nav id="mobile-nav" class="hidden lg:hidden pb-4">
-<div class="flex flex-col gap-2">
-<a href="#accueil" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="shield" class="h-5 w-5 text-benin-green"></i> Accueil
-</a>
-<a href="#institutions" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="building-2" class="h-5 w-5 text-benin-green"></i>
-Institutions
-</a>
-<a href="#personnalites" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="users" class="h-5 w-5 text-benin-green"></i>
-Personnalités
-</a>
-<a href="#documents" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="file-text" class="h-5 w-5 text-benin-green"></i>
-Documents
-</a>
-<a href="#cas" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="alert-triangle" class="h-5 w-5 text-benin-green"></i> Cas
-Documentés
-</a>
-<a href="#mentions-legales" class="flex items-center gap-3 px-4 py-3
-text-white hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="file-text" class="h-5 w-5 text-benin-green"></i> Mentions
-Légales
-</a>
-<a href="#partager" class="flex items-center gap-3 px-4 py-3 text-white
-hover:bg-dark-border rounded-lg transition-all">
-<i data-lucide="share-2" class="h-5 w-5 text-benin-green"></i> Partager
-</a>
-</div>
+<!-- Généré dynamiquement -->
 </nav>
 </div>
 </header>
-<section id="accueil" class="relative min-h-[90vh] flex items-center justify-center
-overflow-hidden">
+
+<section id="accueil" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-grid opacity-30"></div>
-<div class="absolute top-0 left-1/4 w-96 h-96 bg-benin-green/20 rounded-full
-blur-3xl"></div>
-<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-benin-yellow/10 rounded-full
-blur-3xl"></div>
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-benin-green/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-benin-yellow/10 rounded-full blur-3xl"></div>
 <div class="hero-circle w-[800px] h-[800px]"></div>
 <div class="hero-circle w-[600px] h-[600px]"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="max-w-5xl mx-auto text-center">
 <div class="mb-8 fade-in">
-<span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full
-border border-benin-green/50 bg-benin-green/10">
+<span class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-benin-green/50 bg-benin-green/10">
 <i data-lucide="scale" class="h-4 w-4"></i>
-Association Éthique Juridique 2.0 Internationale • France
+<span id="hero-association"></span>
 </span>
 </div>
-<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6
-leading-tight">
-<span class="text-gradient">Veille Citoyenne</span>
-<br>
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+<span class="text-gradient">Veille Citoyenne</span><br>
 <span class="text-white">de la Foi Publique</span>
 </h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl
-mx-auto">
-Dénonciation de la
-<span class="text-benin-red font-semibold">déliquescence de la foi
-publique</span>
-au Bénin : faux documents administratifs, impunité institutionnelle et
-arbitraire des responsables.
+<p class="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto">
+Dénonciation de la <span class="text-benin-red font-semibold">déliquescence de la foi publique</span> au Bénin : faux documents administratifs, impunité institutionnelle et arbitraire des responsables.
 </p>
 <div class="flex flex-wrap justify-center gap-4 mb-10">
 <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
@@ -292,822 +221,86 @@ arbitraire des responsables.
 </div>
 </div>
 <div class="flex flex-wrap justify-center gap-4">
-<a href="#cas" class="px-8 py-3 text-lg font-medium rounded-lg
-bg-benin-green text-white glow-green hover:bg-benin-green/90 transition-all">
+<a href="#cas" class="px-8 py-3 text-lg font-medium rounded-lg bg-benin-green text-white glow-green hover:bg-benin-green/90 transition-all">
 Voir les Cas Documentés
 </a>
-<a href="#documents" class="px-8 py-3 text-lg font-medium rounded-lg
-border border-benin-green/50 text-white hover:bg-benin-green/10 transition-all">
+<a href="#documents" class="px-8 py-3 text-lg font-medium rounded-lg border border-benin-green/50 text-white hover:bg-benin-green/10 transition-all">
 Accéder aux Preuves
 </a>
 </div>
 <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-<i data-lucide="chevron-down" class="h-8 w-8 text-benin-green
-animate-bounce"></i>
+<i data-lucide="chevron-down" class="h-8 w-8 text-benin-green animate-bounce"></i>
 </div>
 </div>
 </div>
 </section>
+
 <section class="py-16 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5
-to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5 to-transparent"></div>
 <div class="container mx-auto px-4 relative z-10">
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-<div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50
-transition-all duration-300">
-<div class="inline-flex p-3 rounded-full mb-4 bg-benin-red/20">
-<i data-lucide="alert-triangle" class="h-6 w-6 text-benin-red"></i>
-</div>
-<div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">1</div>
-<div class="text-sm text-gray-400">Affaires Documentées</div>
-</div>
-<div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50
-transition-all duration-300">
-<div class="inline-flex p-3 rounded-full mb-4 bg-benin-yellow/20">
-<i data-lucide="users" class="h-6 w-6 text-benin-yellow"></i>
-</div>
-<div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">5</div>
-<div class="text-sm text-gray-400">Personnalités Indexées</div>
-</div>
-<div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50
-transition-all duration-300">
-<div class="inline-flex p-3 rounded-full mb-4 bg-benin-green/20">
-<i data-lucide="building-2" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">6</div>
-<div class="text-sm text-gray-400">Institutions Concernées</div>
-</div>
-<div class="glass-card rounded-xl p-6 text-center hover:border-benin-green/50
-transition-all duration-300">
-<div class="inline-flex p-3 rounded-full mb-4 bg-gray-600/20">
-<i data-lucide="file-text" class="h-6 w-6 text-gray-400"></i>
-</div>
-<div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">6</div>
-<div class="text-sm text-gray-400">Pièces Justificatives</div>
-</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" id="stats-container">
+<!-- Généré dynamiquement -->
 </div>
 </div>
 </section>
-<section id="a-propos" class="py-20 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5
-to-transparent"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="max-w-4xl mx-auto">
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="h-2 bg-gradient-to-r from-benin-green via-benin-yellow
-to-benin-red"></div>
-<div class="p-8">
-<div class="text-center mb-8">
-<span class="inline-flex items-center gap-2 px-4 py-2 text-sm
-rounded-full border border-dark-border mb-4">
-<i data-lucide="scale" class="h-4 w-4 text-benin-green"></i>
-Association Éthique Juridique 2.0 Internationale
-</span>
-<h2 class="text-3xl sm:text-4xl font-bold mb-4">
-<span class="text-gradient">À Propos</span>
-</h2>
-<p class="text-gray-400 text-lg">
-Une initiative citoyenne pour la défense de la foi publique en Afrique
-francophone.
-</p>
-</div>
-<div class="mb-8 p-6 bg-dark-card/50 rounded-xl">
-<h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
-<i data-lucide="book-open" class="h-5 w-5 text-benin-green"></i>
-Notre Mission
-</h3>
-<p class="text-gray-400 leading-relaxed mb-4">
-L'association <strong class="text-white">Éthique Juridique 2.0
-Internationale</strong>,
-basée en France, se donne pour mission de dénoncer la déliquescence
-de la foi publique dans les pays
-d'Afrique francophone. Nous documentons et publions des cas avérés
-de faux documents
-administratifs, d'irrégularités judiciaires et d'impunité institutionnelle.
-</p>
-<ul class="space-y-2 text-gray-400">
-<li class="flex items-start gap-2">
-<i data-lucide="file-check" class="h-4 w-4 text-benin-green mt-1
-flex-shrink-0"></i>
-<span>Documenter les preuves d'actes attentatoires à la foi
-publique</span>
-</li>
-<li class="flex items-start gap-2">
-<i data-lucide="users" class="h-4 w-4 text-benin-green mt-1
-flex-shrink-0"></i>
-<span>Identifier les responsables pour permettre une
-responsabilisation</span>
-</li>
-<li class="flex items-start gap-2">
-<i data-lucide="eye" class="h-4 w-4 text-benin-green mt-1
-flex-shrink-0"></i>
-<span>Informer le public et les autorités compétentes</span>
-</li>
-</ul>
-</div>
-<div class="p-4 bg-benin-yellow/10 border border-benin-yellow/30
-rounded-lg">
-<div class="flex items-start gap-3">
-<i data-lucide="alert-triangle" class="h-5 w-5 text-benin-yellow
-flex-shrink-0 mt-0.5"></i>
-<div class="text-sm">
-<p class="font-semibold text-benin-yellow mb-1">Avertissement
-Légal</p>
-<p class="text-gray-400">
-Toutes les informations publiées sur cette plateforme sont basées
-sur des
-documents officiels et des faits vérifiables. Conformément aux
-engagements
-internationaux du Bénin en matière de droits de l'homme et
-d'accès
-à l'information, cette plateforme exerce un droit de vigilance
-citoyenne.
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 <section id="institutions" class="py-20 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5
-to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="text-center mb-12">
 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
 <span class="text-gradient">Institutions Indexées</span>
 </h2>
 <p class="text-gray-400 max-w-2xl mx-auto">
-Institutions étatiques et professionnelles impliquées dans des affaires de faux
-documents
-ou d'irrégularités administratives.
+Institutions étatiques et professionnelles impliquées dans des affaires de faux documents ou d'irrégularités administratives.
 </p>
 </div>
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-green/20">
-<i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Ministère</span>
-<h3 class="font-semibold group-hover:text-benin-green
-transition-colors">
-Justice
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-red/20">
-<i data-lucide="shield" class="h-6 w-6 text-benin-red"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Brigade de Police</span>
-<h3 class="font-semibold">
-Brigade anti criminalité (BAC)
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-yellow/20">
-<i data-lucide="lock" class="h-6 w-6 text-benin-yellow"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Autorité</span>
-<h3 class="font-semibold">
-Autorité Pour la Protection des Données Personnelle (APDP)
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-<div class="flex items-center gap-1 text-gray-400">
-<i data-lucide="users" class="h-4 w-4"></i>
-<span>1 pers.</span>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-green/20">
-<i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Barreau</span>
-<h3 class="font-semibold">
-Barreau du Bénin
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-green/20">
-<i data-lucide="landmark" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Ministère</span>
-<h3 class="font-semibold">
-Ministère des finances
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300 cursor-pointer">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-red/20">
-<i data-lucide="briefcase" class="h-6 w-6 text-benin-red"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Cellule</span>
-<h3 class="font-semibold">
-Centif
-</h3>
-</div>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
-<i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
-<span class="truncate">Cotonou, Bénin</span>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<div class="flex items-center gap-1 text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-<div class="flex items-center gap-1 text-gray-400">
-<i data-lucide="users" class="h-4 w-4"></i>
-<span>1 pers.</span>
-</div>
-</div>
-</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="institutions-container">
+<!-- Généré dynamiquement -->
 </div>
 </div>
 </section>
+
 <section id="personnalites" class="py-20 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-red/5
-to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-red/5 to-transparent"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="text-center mb-12">
 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
 <span class="text-gradient">Personnalités Indexées</span>
 </h2>
 <p class="text-gray-400 max-w-2xl mx-auto">
-Officiers publics et auxiliaires de justice impliqués dans des actes
-attentatoires
-à la foi publique, avec photos et biographies.
+Officiers publics et auxiliaires de justice impliqués dans des actes attentatoires à la foi publique.
 </p>
 </div>
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-<div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50
-transition-all duration-300 cursor-pointer">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
-<div class="p-6">
-<div class="flex flex-col items-center text-center mb-4">
-<img src="assets/votre-photo.jpg" class="h-20 w-20 rounded-full
-object-cover mb-4 border-2 border-benin-red shadow-lg" alt="Aubierge Hungbo Kploca">
-<h3 class="font-semibold text-lg">Aubierge Hungbo Kploca</h3>
-<div class="flex items-center gap-2 mt-2">
-<i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-<span class="text-sm text-gray-400">Magistrate</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="px-2 py-1 text-xs rounded-full
-status-open">Actif</span>
-<div class="flex items-center gap-1 text-sm text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-<div class="flex items-start gap-2 text-sm">
-<i data-lucide="building-2" class="h-4 w-4 text-gray-400
-flex-shrink-0 mt-0.5"></i>
-<span class="text-gray-400">Tribunal de Cotonou - 3ème
-Chambre</span>
-</div>
-<div class="p-3 bg-dark-muted/50 rounded-lg">
-<p class="text-xs text-gray-400 italic">
-"Signataire du jugement 114/14/3ème CH-EP constatant le legs
-d'une parcelle inexistante."
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50
-transition-all duration-300 cursor-pointer">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
-<div class="p-6">
-<div class="flex flex-col items-center text-center mb-4">
-<div class="h-20 w-20 rounded-full bg-dark-muted flex items-center
-justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
-FB
-</div>
-<h3 class="font-semibold text-lg">Félix A. BALLEY</h3>
-<div class="flex items-center gap-2 mt-2">
-<i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-<span class="text-sm text-gray-400">Notaire</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="px-2 py-1 text-xs rounded-full
-status-open">Actif</span>
-<div class="flex items-center gap-1 text-sm text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-<div class="flex items-start gap-2 text-sm">
-<i data-lucide="building-2" class="h-4 w-4 text-gray-400
-flex-shrink-0 mt-0.5"></i>
-<span class="text-gray-400">Étude Notariale BALLEY</span>
-</div>
-<div class="p-3 bg-dark-muted/50 rounded-lg">
-<p class="text-xs text-gray-400 italic">
-"Signataire du certificat d'acquit avec date de décès erronée et
-mandat inexistant."
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50
-transition-all duration-300 cursor-pointer">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
-<div class="p-6">
-<div class="flex flex-col items-center text-center mb-4">
-<div class="h-20 w-20 rounded-full bg-dark-muted flex items-center
-justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
-VF
-</div>
-<h3 class="font-semibold text-lg">Victorien Fade</h3>
-<div class="flex items-center gap-2 mt-2">
-<i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-<span class="text-sm text-gray-400">Avocat</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="px-2 py-1 text-xs rounded-full
-status-open">Actif</span>
-<div class="flex items-center gap-1 text-sm text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-<div class="flex items-start gap-2 text-sm">
-<i data-lucide="building-2" class="h-4 w-4 text-gray-400
-flex-shrink-0 mt-0.5"></i>
-<span class="text-gray-400">Cabinet FADE</span>
-</div>
-<div class="p-3 bg-dark-muted/50 rounded-lg">
-<p class="text-xs text-gray-400 italic">
-"Triple conflit d'intérêts non déclaré: mandataire, avocat adverse,
-émetteur de signification."
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50
-transition-all duration-300 cursor-pointer">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
-<div class="p-6">
-<div class="flex flex-col items-center text-center mb-4">
-<div class="h-20 w-20 rounded-full bg-dark-muted flex items-center
-justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
-LH
-</div>
-<h3 class="font-semibold text-lg">Luciano Hounkponou</h3>
-<div class="flex items-center gap-2 mt-2">
-<i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-<span class="text-sm text-gray-400">Avocat / Président
-APDP</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="px-2 py-1 text-xs rounded-full
-status-open">Actif</span>
-<div class="flex items-center gap-1 text-sm text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-<div class="flex items-start gap-2 text-sm">
-<i data-lucide="building-2" class="h-4 w-4 text-gray-400
-flex-shrink-0 mt-0.5"></i>
-<span class="text-gray-400">Autorité Pour la Protection des
-Données Personnelle (APDP)</span>
-</div>
-</div>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden hover:border-benin-red/50
-transition-all duration-300 cursor-pointer">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
-<div class="p-6">
-<div class="flex flex-col items-center text-center mb-4">
-<div class="h-20 w-20 rounded-full bg-dark-muted flex items-center
-justify-center mb-4 border-2 border-dark-border text-2xl font-bold">
-AB
-</div>
-<h3 class="font-semibold text-lg">Abdou Rafiou Bello</h3>
-<div class="flex items-center gap-2 mt-2">
-<i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
-<span class="text-sm text-gray-400">Président CENTIF</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="px-2 py-1 text-xs rounded-full
-status-open">Actif</span>
-<div class="flex items-center gap-1 text-sm text-benin-red">
-<i data-lucide="alert-triangle" class="h-4 w-4"></i>
-<span>1 cas</span>
-</div>
-</div>
-<div class="flex items-start gap-2 text-sm">
-<i data-lucide="building-2" class="h-4 w-4 text-gray-400
-flex-shrink-0 mt-0.5"></i>
-<span class="text-gray-400">Centif</span>
-</div>
-</div>
-</div>
-</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="personnalites-container">
+<!-- Généré dynamiquement -->
 </div>
 </div>
 </section>
+
 <section id="documents" class="py-20 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5
-to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5 to-transparent"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="text-center mb-12">
 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
 <span class="text-gradient">Pièces Justificatives</span>
 </h2>
 <p class="text-gray-400 max-w-2xl mx-auto">
-Documents officiels téléchargeables constituant les preuves des irrégularités
-dénoncées.
-Transparence totale pour le public.
+Documents officiels téléchargeables constituant les preuves des irrégularités dénoncées. Transparence totale pour le public.
 </p>
 </div>
-<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-green/20 flex-shrink-0">
-<i data-lucide="scale" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Jugement</span>
-<h3 class="font-semibold">Jugement 114/14/3ème CH-EP</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-Jugement du 31 octobre 2014 - Constat de legs d'une parcelle inexistante
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-31/10/2014
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-gray-600/20 flex-shrink-0">
-<i data-lucide="file" class="h-6 w-6 text-gray-400"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Signification</span>
-<h3 class="font-semibold">Signification du Jugement</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-Signification émise par l'avocat FADE en France
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-2017
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-green/20 flex-shrink-0">
-<i data-lucide="file-text" class="h-6 w-6 text-benin-green"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">PV</span>
-<h3 class="font-semibold">PV de Compulsion</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-PV du 19 décembre 2017 - Mairie de Cotonou et IGN confirmant la
-parcelle inexistante
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-19/12/2017
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-<i data-lucide="file-check" class="h-6 w-6 text-benin-yellow"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Certificat</span>
-<h3 class="font-semibold">Certificat d'Acquit de Droit</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-Certificat avec date de décès erronée (10 juin 2016 au lieu du 3 déc. 2010)
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-20/10/2016
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
-<i data-lucide="file-check" class="h-6 w-6 text-benin-yellow"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Certificat</span>
-<h3 class="font-semibold">Acte de Décès J.F. FELIHO</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-Déclaration de décès officielle: 3 décembre 2010
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-03/12/2010
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
-<div class="glass-card rounded-xl p-6 hover:border-benin-green/50
-transition-all duration-300">
-<div class="flex items-start gap-4 mb-4">
-<div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
-<i data-lucide="file-warning" class="h-6 w-6 text-benin-red"></i>
-</div>
-<div class="flex-1 min-w-0">
-<span class="inline-block px-2 py-1 text-xs rounded border
-border-dark-border mb-2">Lettre</span>
-<h3 class="font-semibold">Lettre du Notaire GAGNITO</h3>
-</div>
-</div>
-<p class="text-sm text-gray-400 mb-4">
-Lettre du 19 septembre 2007 révélant le conflit d'intérêts de l'avocat FADE
-</p>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-19/09/2007
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-PDF
-</div>
-</div>
-<div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded
-border border-benin-red/20">
-Affaire: Succession FELIHO
-</div>
-<div class="flex gap-2">
-<button class="flex-1 px-3 py-2 text-sm rounded-lg border
-border-dark-border hover:bg-dark-muted transition-all">
-<i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
-</button>
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3
-py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90
-transition-all">
-<i data-lucide="download" class="h-4 w-4 inline
-mr-2"></i>Télécharger
-</a>
-</div>
-</div>
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" id="documents-container">
+<!-- Généré dynamiquement -->
 </div>
 <div class="mt-8 text-center">
-<a
-href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="inline-flex
-items-center gap-2 px-6 py-3 text-lg rounded-lg border border-benin-green/50
-hover:bg-benin-green/10 transition-all">
+<a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-lg rounded-lg border border-benin-green/50 hover:bg-benin-green/10 transition-all">
 <i data-lucide="external-link" class="h-5 w-5"></i>
 Accéder à tous les documents (Dropbox)
 </a>
 </div>
 </div>
 </section>
+
 <section id="cas" class="py-20 relative">
 <div class="container mx-auto px-4">
 <div class="text-center mb-12">
@@ -1115,174 +308,36 @@ Accéder à tous les documents (Dropbox)
 <span class="text-gradient">Cas Documentés</span>
 </h2>
 <p class="text-gray-400 max-w-2xl mx-auto">
-Affaires de faux documents administratifs et d'impunité institutionnelle au
-Bénin,
-avec preuves à l'appui.
+Affaires de faux documents administratifs et d'impunité institutionnelle au Bénin, avec preuves à l'appui.
 </p>
 </div>
-<div class="max-w-4xl mx-auto">
-<div class="glass-card rounded-xl overflow-hidden
-hover:border-benin-green/50 transition-all duration-300">
-<div class="p-6">
-<div class="flex items-start justify-between gap-2 mb-4">
-<span class="px-3 py-1 text-sm rounded-full status-open">En
-cours</span>
-<span class="text-benin-red font-semibold">● CRITIQUE</span>
-</div>
-<h3 class="text-xl font-bold mb-4">
-Affaire Succession Jean Florentin FELIHO - Faux manifestes dans des
-actes authentiques
-</h3>
-<p class="text-gray-400 mb-6">
-Cette affaire met en lumière l'existence de cinq versions officielles
-incompatibles produites par des officiers publics béninois.
-Trois catégories d'officiers publics et auxiliaires de justice - magistrat,
-avocat, notaire - apparaissent directement impliqués
-dans la production et/ou l'usage d'actes officiels béninois
-contradictoires.
-</p>
-<div class="overflow-x-auto mb-6">
-<table class="w-full text-sm">
-<thead>
-<tr class="border-b border-dark-border">
-<th class="text-left py-3 px-4 text-gray-400">Document</th>
-<th class="text-left py-3 px-4 text-gray-400">Allégation</th>
-<th class="text-left py-3 px-4
-text-gray-400">Contradiction</th>
-<th class="text-left py-3 px-4 text-gray-400">Responsable</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-dark-border">
-<tr>
-<td class="py-3 px-4">Jugement 114/14/3ème CH-EP
-(31/10/2014)</td>
-<td class="py-3 px-4">Constate legs parcelle B lot 488</td>
-<td class="py-3 px-4 text-benin-red">Parcelle inexistante</td>
-<td class="py-3 px-4">Mme Aubierge Hungbo Kploca</td>
-</tr>
-<tr>
-<td class="py-3 px-4">Certificat d'acquit (20/10/2016)</td>
-<td class="py-3 px-4">Décès le 10 juin 2016</td>
-<td class="py-3 px-4 text-benin-red">Acte de décès: 3 déc.
-2010 (6 ans d'écart)</td>
-<td class="py-3 px-4">Notaire BALLEY</td>
-</tr>
-<tr>
-<td class="py-3 px-4">Lettre GAGNITO (19/09/2007)</td>
-<td class="py-3 px-4">Révèle mandat FADE</td>
-<td class="py-3 px-4 text-benin-red">Triple conflit
-d'intérêts</td>
-<td class="py-3 px-4">Avocat FADE</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="calendar" class="h-3 w-3"></i>
-31/10/2014
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="building-2" class="h-3 w-3"></i>
-Tribunal de Cotonou
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="users" class="h-3 w-3"></i>
-5 personnes
-</div>
-<div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50
-rounded">
-<i data-lucide="file-text" class="h-3 w-3"></i>
-6 documents
-</div>
-</div>
-<a href="#documents" class="inline-flex items-center gap-2 px-4 py-2
-rounded-lg bg-benin-green text-white hover:bg-benin-green/90 transition-all">
-<i data-lucide="eye" class="h-4 w-4"></i>
-Voir les preuves
-<i data-lucide="chevron-right" class="h-4 w-4"></i>
-</a>
-</div>
-</div>
+<div class="max-w-4xl mx-auto" id="affaires-container">
+<!-- Généré dynamiquement -->
 </div>
 </div>
 </section>
+
 <section id="mentions-legales" class="py-16 relative">
 <div class="container mx-auto px-4 relative z-10">
 <div class="max-w-4xl mx-auto glass-card rounded-xl overflow-hidden">
-<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow
-to-benin-green"></div>
+<div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
 <div class="p-6 sm:p-8">
 <div class="text-center mb-8">
 <h2 class="text-2xl sm:text-3xl font-bold mb-4">
 <span class="text-gradient">Mentions Légales</span>
 </h2>
-<p class="text-gray-400">
-Informations légales concernant l'éditeur, l'hébergeur et l'objet du site.
-</p>
+<p class="text-gray-400">Informations légales concernant l'éditeur, l'hébergeur et l'objet du site.</p>
 </div>
-<div class="space-y-6">
-<div class="p-4 bg-dark-muted/30 rounded-lg">
-<h3 class="font-semibold mb-3 flex items-center gap-2">
-<i data-lucide="building-2" class="h-5 w-5 text-benin-green"></i>
-Éditeur du site
-</h3>
-<p class="text-gray-400">
-<strong>Éthique Juridique 2.0 Internationale (EJI.2.0
-Internationale)</strong><br>
-Association loi 1901 déclarée à la Préfecture de Créteil<br>
-RNA : W941020107<br>
-Siège social : 60 rue G. EIFFEL, 94000 Créteil<br>
-Tél. : +33 1 48 98 02 07<br>
-Email : <a href="mailto:contact@eji2.org" class="text-benin-green
-hover:underline">contact@eji2.org</a><br>
-Site institutionnel : <a href="https://eji2.org" target="_blank"
-class="text-benin-green hover:underline">https://eji2.org</a>
-</p>
-</div>
-<div class="p-4 bg-dark-muted/30 rounded-lg">
-<h3 class="font-semibold mb-3 flex items-center gap-2">
-<i data-lucide="user" class="h-5 w-5 text-benin-green"></i>
-Direction de la publication
-</h3>
-<p class="text-gray-400">
-Directeur de publication : Gilles Sixte FELIHO
-</p>
-</div>
-<div class="p-4 bg-dark-muted/30 rounded-lg">
-<h3 class="font-semibold mb-3 flex items-center gap-2">
-<i data-lucide="server" class="h-5 w-5 text-benin-green"></i>
-Hébergement
-</h3>
-<p class="text-gray-400">
-<strong>Netlify</strong><br>
-2325 Oakdale Ave, San Francisco, CA 94123, États-Unis<br>
-Tél. : +1 415 375 8962
-</p>
-</div>
-<div class="p-4 bg-dark-muted/30 rounded-lg">
-<h3 class="font-semibold mb-3 flex items-center gap-2">
-<i data-lucide="info" class="h-5 w-5 text-benin-green"></i>
-Objet du site
-</h3>
-<p class="text-gray-400">
-Promotion de l'éthique 2.0 en IA et technologies (JOAFE
-20250002).<br>
-Ce site s'inscrit dans un combat citoyen contre la déliquescence de la
-foi publique au Bénin.
-</p>
-</div>
+<div class="space-y-6" id="mentions-container">
+<!-- Généré dynamiquement -->
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <section id="partager" class="py-20 relative">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5
-to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="max-w-3xl mx-auto">
 <div class="glass-card rounded-xl animated-border">
@@ -1294,133 +349,87 @@ to-transparent"></div>
 </h2>
 </div>
 <p class="text-gray-400 mb-6 max-w-xl mx-auto">
-La transparence et la justice passent par la diffusion de l'information.
-Partagez ces révélations pour éveiller les consciences.
+La transparence et la justice passent par la diffusion de l'information. Partagez ces révélations pour éveiller les consciences.
 </p>
 <div class="flex flex-wrap justify-center gap-3 mb-6">
-<button onclick="shareTwitter()" class="flex items-center gap-2 px-4
-py-2 rounded-lg glass hover:bg-black hover:text-white transition-all duration-300">
-<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24
-24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99
-21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084
-4.126H5.117z"/></svg>
+<button onclick="shareTwitter()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-black hover:text-white transition-all duration-300">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
 Twitter / X
 </button>
-<button onclick="shareFacebook()" class="flex items-center gap-2 px-4
-py-2 rounded-lg glass hover:bg-blue-600 hover:text-white transition-all duration-300">
+<button onclick="shareFacebook()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-600 hover:text-white transition-all duration-300">
 <i data-lucide="facebook" class="h-5 w-5"></i>
 Facebook
 </button>
-<button onclick="shareLinkedIn()" class="flex items-center gap-2 px-4
-py-2 rounded-lg glass hover:bg-blue-700 hover:text-white transition-all duration-300">
+<button onclick="shareLinkedIn()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-blue-700 hover:text-white transition-all duration-300">
 <i data-lucide="linkedin" class="h-5 w-5"></i>
 LinkedIn
 </button>
-<button onclick="shareWhatsApp()" class="flex items-center gap-2
-px-4 py-2 rounded-lg glass hover:bg-green-600 hover:text-white transition-all duration-300">
+<button onclick="shareWhatsApp()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-green-600 hover:text-white transition-all duration-300">
 <i data-lucide="message-circle" class="h-5 w-5"></i>
 WhatsApp
 </button>
-<button onclick="shareEmail()" class="flex items-center gap-2 px-4
-py-2 rounded-lg glass hover:bg-gray-600 hover:text-white transition-all duration-300">
+<button onclick="shareEmail()" class="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-gray-600 hover:text-white transition-all duration-300">
 <i data-lucide="mail" class="h-5 w-5"></i>
 Email
 </button>
 </div>
 <div class="flex items-center gap-2 p-3 bg-dark-muted/50 rounded-lg">
-<input type="text" id="share-url"
-value="https://ethique-juridique-benin.org" readonly class="flex-1 bg-transparent text-sm
-text-gray-400 outline-none">
-<button onclick="copyLink()" id="copy-btn" class="px-3 py-1 text-sm
-rounded bg-dark-border hover:bg-benin-green hover:text-white transition-all">
-<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>
-Copier
+<input type="text" id="share-url" value="https://ethique-juridique-benin.org" readonly class="flex-1 bg-transparent text-sm text-gray-400 outline-none">
+<button onclick="copyLink()" id="copy-btn" class="px-3 py-1 text-sm rounded bg-dark-border hover:bg-benin-green hover:text-white transition-all">
+<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier
 </button>
 </div>
-<span class="inline-block mt-6 px-3 py-1 text-xs rounded-full border
-border-dark-border">
-Partage responsable - Diffusez la vérité
-</span>
+<span class="inline-block mt-6 px-3 py-1 text-xs rounded-full border border-dark-border">Partage responsable - Diffusez la vérité</span>
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <footer class="border-t border-dark-border bg-dark-card/50 mt-auto">
 <div class="container mx-auto px-4 py-12">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 <div class="col-span-1 md:col-span-2 space-y-4">
 <div class="flex items-center gap-3">
 <i data-lucide="scale" class="h-8 w-8 text-benin-green"></i>
-<span class="text-xl font-bold text-gradient">Éthique Juridique
-2.0</span>
+<span class="text-xl font-bold text-gradient" id="footer-title">Éthique Juridique 2.0</span>
 </div>
-<p class="text-gray-400 max-w-sm">
-Association Internationale de veille citoyenne pour la protection de la foi
-publique
-et la lutte contre l'arbitraire administratif.
-</p>
+<p class="text-gray-400 max-w-sm">Association Internationale de veille citoyenne pour la protection de la foi publique et la lutte contre l'arbitraire administratif.</p>
 <div class="flex gap-4">
-<a href="#" class="p-2 rounded-lg glass hover:text-benin-green
-transition-colors">
-<i data-lucide="twitter" class="h-5 w-5"></i>
-</a>
-<a href="#" class="p-2 rounded-lg glass hover:text-benin-green
-transition-colors">
-<i data-lucide="facebook" class="h-5 w-5"></i>
-</a>
-<a href="#" class="p-2 rounded-lg glass hover:text-benin-green
-transition-colors">
-<i data-lucide="linkedin" class="h-5 w-5"></i>
-</a>
+<a href="#" class="p-2 rounded-lg glass hover:text-benin-green transition-colors"><i data-lucide="twitter" class="h-5 w-5"></i></a>
+<a href="#" class="p-2 rounded-lg glass hover:text-benin-green transition-colors"><i data-lucide="facebook" class="h-5 w-5"></i></a>
+<a href="#" class="p-2 rounded-lg glass hover:text-benin-green transition-colors"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
 </div>
 </div>
 <div class="space-y-4">
 <h4 class="font-semibold text-white">Navigation</h4>
-<nav class="flex flex-col gap-2">
-<a href="#accueil" class="text-sm text-gray-400 hover:text-benin-green
-transition-colors">Accueil</a>
-<a href="#institutions" class="text-sm text-gray-400
-hover:text-benin-green transition-colors">Institutions</a>
-<a href="#personnalites" class="text-sm text-gray-400
-hover:text-benin-green transition-colors">Personnalités</a>
-<a href="#documents" class="text-sm text-gray-400
-hover:text-benin-green transition-colors">Documents</a>
-<a href="#cas" class="text-sm text-gray-400 hover:text-benin-green
-transition-colors">Cas Documentés</a>
-<a href="#mentions-legales" class="text-sm text-gray-400
-hover:text-benin-green transition-colors">Mentions Légales</a>
+<nav class="flex flex-col gap-2" id="footer-nav">
+<!-- Généré dynamiquement -->
 </nav>
 </div>
 <div class="space-y-4">
 <h4 class="font-semibold text-white">Mentions Légales</h4>
 <nav class="flex flex-col gap-2">
-<a href="#mentions-legales" class="text-sm text-gray-400
-hover:text-benin-green transition-colors">Avertissement légal</a>
-<a href="#" class="text-sm text-gray-400 hover:text-benin-green
-transition-colors">Politique de confidentialité</a>
-<a href="#" class="text-sm text-gray-400 hover:text-benin-green
-transition-colors">Conditions d'utilisation</a>
-<a href="#" class="text-sm text-gray-400 hover:text-benin-green
-transition-colors">Droit de réponse</a>
+<a href="#mentions-legales" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Avertissement légal</a>
+<a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Politique de confidentialité</a>
+<a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Conditions d'utilisation</a>
+<a href="#" class="text-sm text-gray-400 hover:text-benin-green transition-colors">Droit de réponse</a>
 </nav>
 </div>
 <div class="space-y-4">
 <h4 class="font-semibold text-white">Contact</h4>
 <div class="flex items-center gap-2 text-sm text-gray-400">
 <i data-lucide="mail" class="h-4 w-4"></i>
-<span>contact@ethique-juridique.org</span>
+<span id="footer-email"></span>
 </div>
 <div class="flex items-center gap-2 text-sm text-gray-400">
 <i data-lucide="globe" class="h-4 w-4"></i>
-<span>www.ethique-juridique.org</span>
+<span id="footer-site"></span>
 </div>
 <div class="p-3 bg-dark-muted/50 rounded-lg">
 <p class="text-xs text-gray-400 flex items-start gap-2">
-<i data-lucide="shield" class="h-4 w-4 flex-shrink-0
-text-benin-green"></i>
-Toutes les informations publiées sont basées sur des documents officiels
-et des faits vérifiables.
+<i data-lucide="shield" class="h-4 w-4 flex-shrink-0 text-benin-green"></i>
+Toutes les informations publiées sont basées sur des documents officiels et des faits vérifiables.
 </p>
 </div>
 </div>
@@ -1428,11 +437,9 @@ et des faits vérifiables.
 <hr class="my-8 border-dark-border">
 <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
 <div class="flex items-center gap-4 text-sm text-gray-400">
-<span>© 2025 Éthique Juridique 2.0 Internationale</span>
+<span id="footer-copyright"></span>
 <span class="hidden sm:inline">•</span>
-<span class="flex items-center gap-1">
-Fait avec <span class="text-benin-red">❤</span> pour la justice
-</span>
+<span class="flex items-center gap-1">Fait avec <span class="text-benin-red">❤</span> pour la justice</span>
 </div>
 <div class="flex items-center gap-2 text-xs text-gray-400">
 <i data-lucide="alert-triangle" class="h-4 w-4 text-benin-yellow"></i>
@@ -1441,53 +448,407 @@ Fait avec <span class="text-benin-red">❤</span> pour la justice
 </div>
 </div>
 </footer>
+
 <script>
-// Initialize Lucide icons
-lucide.createIcons();
+// Initialisation des icônes Lucide
+function initIcons() {
+    lucide.createIcons();
+}
+
+// Génération de la navigation
+function renderNavigation() {
+    const desktopNav = document.getElementById('desktop-nav');
+    const mobileNav = document.getElementById('mobile-nav');
+    const footerNav = document.getElementById('footer-nav');
+    
+    siteData.navigation.forEach(item => {
+        // Desktop
+        const desktopLink = document.createElement('a');
+        desktopLink.href = `#${item.id}`;
+        desktopLink.className = 'flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-dark-border rounded-lg transition-all';
+        desktopLink.innerHTML = `<i data-lucide="${item.icon}" class="h-4 w-4"></i> ${item.label}`;
+        desktopNav.appendChild(desktopLink);
+        
+        // Mobile
+        const mobileLink = document.createElement('a');
+        mobileLink.href = `#${item.id}`;
+        mobileLink.className = 'flex items-center gap-3 px-4 py-3 text-white hover:bg-dark-border rounded-lg transition-all';
+        mobileLink.innerHTML = `<i data-lucide="${item.icon}" class="h-5 w-5 text-benin-green"></i> ${item.label}`;
+        mobileNav.appendChild(mobileLink);
+        
+        // Footer (sans Accueil et Partager)
+        if (item.id !== 'accueil' && item.id !== 'partager') {
+            const footerLink = document.createElement('a');
+            footerLink.href = `#${item.id}`;
+            footerLink.className = 'text-sm text-gray-400 hover:text-benin-green transition-colors';
+            footerLink.textContent = item.label;
+            footerNav.appendChild(footerLink);
+        }
+    });
+}
+
+// Génération des statistiques
+function renderStats() {
+    const container = document.getElementById('stats-container');
+    const stats = [
+        { icon: 'alert-triangle', color: 'benin-red', value: siteData.statistiques.affaires, label: 'Affaires Documentées' },
+        { icon: 'users', color: 'benin-yellow', value: siteData.statistiques.personnes, label: 'Personnalités Indexées' },
+        { icon: 'building-2', color: 'benin-green', value: siteData.statistiques.institutions, label: 'Institutions Concernées' },
+        { icon: 'file-text', color: 'gray-400', value: siteData.statistiques.documents, label: 'Pièces Justificatives' }
+    ];
+    
+    stats.forEach(stat => {
+        const div = document.createElement('div');
+        div.className = 'glass-card rounded-xl p-6 text-center hover:border-benin-green/50 transition-all duration-300';
+        div.innerHTML = `
+            <div class="inline-flex p-3 rounded-full mb-4 bg-${stat.color}/20">
+                <i data-lucide="${stat.icon}" class="h-6 w-6 text-${stat.color}"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-bold mb-2 text-gradient">${stat.value}</div>
+            <div class="text-sm text-gray-400">${stat.label}</div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Génération des institutions
+function renderInstitutions() {
+    const container = document.getElementById('institutions-container');
+    
+    siteData.institutions.forEach(inst => {
+        const div = document.createElement('div');
+        div.className = 'glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300 cursor-pointer';
+        
+        // Icône selon le type
+        let icon = 'building-2';
+        let color = 'benin-green';
+        if (inst.type === 'Autorité') { icon = 'shield'; color = 'benin-red'; }
+        else if (inst.type === 'Cellule') { icon = 'briefcase'; color = 'benin-red'; }
+        else if (inst.type === 'Tribunal') { icon = 'scale'; color = 'benin-green'; }
+        
+        div.innerHTML = `
+            <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 rounded-xl bg-${color}/20">
+                    <i data-lucide="${icon}" class="h-6 w-6 text-${color}"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">${inst.type}</span>
+                    <h3 class="font-semibold group-hover:text-benin-green transition-colors">${inst.nom}</h3>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <i data-lucide="map-pin" class="h-4 w-4 flex-shrink-0"></i>
+                <span class="truncate">${inst.localisation}</span>
+            </div>
+            <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center gap-1 text-benin-red">
+                    <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                    <span>${inst.cas} cas</span>
+                </div>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Génération des personnalités
+function renderPersonnalites() {
+    const container = document.getElementById('personnalites-container');
+    
+    siteData.personnalites.forEach(pers => {
+        const div = document.createElement('div');
+        div.className = 'glass-card rounded-xl overflow-hidden hover:border-benin-red/50 transition-all duration-300 cursor-pointer';
+        
+        // Initiales pour l'avatar
+        const initiales = pers.nom.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+        
+        div.innerHTML = `
+            <div class="h-1 bg-gradient-to-r from-benin-red via-benin-yellow to-benin-green"></div>
+            <div class="p-6">
+                <div class="flex flex-col items-center text-center mb-4">
+                    <div class="h-20 w-20 rounded-full bg-dark-muted flex items-center justify-center mb-4 border-2 border-benin-red shadow-lg text-2xl font-bold text-gray-400">
+                        ${initiales}
+                    </div>
+                    <h3 class="font-semibold text-lg">${pers.nom}</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <i data-lucide="briefcase" class="h-4 w-4 text-gray-400"></i>
+                        <span class="text-sm text-gray-400">${pers.role}</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2 py-1 text-xs rounded-full status-open">${pers.statut}</span>
+                        <div class="flex items-center gap-1 text-sm text-benin-red">
+                            <i data-lucide="alert-triangle" class="h-4 w-4"></i>
+                            <span>${pers.niveau}</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-dark-muted/50 rounded-lg">
+                        <p class="text-xs text-gray-400 italic">"${pers.description}"</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Génération des documents (basé sur les preuves des affaires)
+function renderDocuments() {
+    const container = document.getElementById('documents-container');
+    const documents = [];
+    
+    siteData.affaires.forEach(affaire => {
+        affaire.preuves.forEach(preuve => {
+            documents.push({
+                ...preuve,
+                affaire: affaire.titre,
+                date: affaire.date
+            });
+        });
+    });
+    
+    documents.forEach((doc, index) => {
+        const div = document.createElement('div');
+        div.className = 'glass-card rounded-xl p-6 hover:border-benin-green/50 transition-all duration-300';
+        
+        // Icône et couleur selon le type
+        let icon = 'file-text';
+        let color = 'benin-green';
+        if (doc.type === 'Jugement') { icon = 'scale'; color = 'benin-green'; }
+        else if (doc.type === 'Certificat') { icon = 'file-check'; color = 'benin-yellow'; }
+        else if (doc.type === 'E-mail / Menace') { icon = 'mail-warning'; color = 'benin-red'; }
+        else if (doc.type === 'Rapport / Alerte') { icon = 'file-warning'; color = 'benin-red'; }
+        
+        div.innerHTML = `
+            <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 rounded-xl bg-${color}/20 flex-shrink-0">
+                    <i data-lucide="${icon}" class="h-6 w-6 text-${color}"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <span class="inline-block px-2 py-1 text-xs rounded border border-dark-border mb-2">${doc.type}</span>
+                    <h3 class="font-semibold">${doc.titre}</h3>
+                </div>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">${doc.anomalie}</p>
+            <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+                <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                    <i data-lucide="calendar" class="h-3 w-3"></i>
+                    ${doc.date || 'N/A'}
+                </div>
+                <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                    <i data-lucide="file-text" class="h-3 w-3"></i>
+                    PDF
+                </div>
+            </div>
+            <div class="text-xs text-gray-400 mb-4 px-2 py-1 bg-benin-red/10 rounded border border-benin-red/20">
+                Affaire: ${doc.affaire}
+            </div>
+            <div class="flex gap-2">
+                <button class="flex-1 px-3 py-2 text-sm rounded-lg border border-dark-border hover:bg-dark-muted transition-all">
+                    <i data-lucide="eye" class="h-4 w-4 inline mr-2"></i>Aperçu
+                </button>
+                <a href="https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0" target="_blank" class="flex-1 px-3 py-2 text-sm rounded-lg bg-benin-green text-white text-center hover:bg-benin-green/90 transition-all">
+                    <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>Télécharger
+                </a>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Génération des affaires
+function renderAffaires() {
+    const container = document.getElementById('affaires-container');
+    
+    siteData.affaires.forEach(affaire => {
+        const div = document.createElement('div');
+        div.className = 'glass-card rounded-xl overflow-hidden hover:border-benin-green/50 transition-all duration-300';
+        
+        // Génération du tableau des preuves
+        let preuvesHTML = '';
+        affaire.preuves.forEach(preuve => {
+            const responsable = siteData.personnalites.find(p => p.id === preuve.responsableId);
+            preuvesHTML += `
+                <tr>
+                    <td class="py-3 px-4">${preuve.titre}</td>
+                    <td class="py-3 px-4">${preuve.type}</td>
+                    <td class="py-3 px-4 text-benin-red">${preuve.anomalie}</td>
+                    <td class="py-3 px-4">${responsable ? responsable.nom : 'N/A'}</td>
+                </tr>
+            `;
+        });
+        
+        div.innerHTML = `
+            <div class="p-6">
+                <div class="flex items-start justify-between gap-2 mb-4">
+                    <span class="px-3 py-1 text-sm rounded-full status-open">${affaire.statut}</span>
+                    <span class="text-benin-red font-semibold">● ${affaire.niveau}</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">${affaire.titre}</h3>
+                <p class="text-gray-400 mb-6">${affaire.resume}</p>
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-border">
+                                <th class="text-left py-3 px-4 text-gray-400">Document</th>
+                                <th class="text-left py-3 px-4 text-gray-400">Type</th>
+                                <th class="text-left py-3 px-4 text-gray-400">Anomalie</th>
+                                <th class="text-left py-3 px-4 text-gray-400">Responsable</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-dark-border">
+                            ${preuvesHTML}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="calendar" class="h-3 w-3"></i>
+                        ${affaire.date}
+                    </div>
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="building-2" class="h-3 w-3"></i>
+                        ${siteData.institutions.length} institutions
+                    </div>
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="users" class="h-3 w-3"></i>
+                        ${siteData.personnalites.length} personnes
+                    </div>
+                    <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
+                        <i data-lucide="file-text" class="h-3 w-3"></i>
+                        ${affaire.preuves.length} documents
+                    </div>
+                </div>
+                <a href="#documents" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-benin-green text-white hover:bg-benin-green/90 transition-all">
+                    <i data-lucide="eye" class="h-4 w-4"></i>
+                    Voir les preuves
+                    <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                </a>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Génération des mentions légales
+function renderMentionsLegales() {
+    const container = document.getElementById('mentions-container');
+    
+    container.innerHTML = `
+        <div class="p-4 bg-dark-muted/30 rounded-lg">
+            <h3 class="font-semibold mb-3 flex items-center gap-2">
+                <i data-lucide="building-2" class="h-5 w-5 text-benin-green"></i>
+                Éditeur du site
+            </h3>
+            <p class="text-gray-400">
+                <strong>${siteData.association.nom} (EJI.2.0 Internationale)</strong><br>
+                Association loi 1901 déclarée à la Préfecture de Créteil<br>
+                RNA : ${siteData.association.rna}<br>
+                Siège social : ${siteData.association.siege}<br>
+                Email : <a href="mailto:${siteData.association.email}" class="text-benin-green hover:underline">${siteData.association.email}</a><br>
+                Site institutionnel : <a href="${siteData.association.site}" target="_blank" class="text-benin-green hover:underline">${siteData.association.site}</a>
+            </p>
+        </div>
+        <div class="p-4 bg-dark-muted/30 rounded-lg">
+            <h3 class="font-semibold mb-3 flex items-center gap-2">
+                <i data-lucide="user" class="h-5 w-5 text-benin-green"></i>
+                Direction de la publication
+            </h3>
+            <p class="text-gray-400">Directeur de publication : Gilles Sixte FELIHO</p>
+        </div>
+        <div class="p-4 bg-dark-muted/30 rounded-lg">
+            <h3 class="font-semibold mb-3 flex items-center gap-2">
+                <i data-lucide="server" class="h-5 w-5 text-benin-green"></i>
+                Hébergement
+            </h3>
+            <p class="text-gray-400">
+                <strong>Netlify</strong><br>
+                2325 Oakdale Ave, San Francisco, CA 94123, États-Unis<br>
+                Tél. : +1 415 375 8962
+            </p>
+        </div>
+        <div class="p-4 bg-dark-muted/30 rounded-lg">
+            <h3 class="font-semibold mb-3 flex items-center gap-2">
+                <i data-lucide="info" class="h-5 w-5 text-benin-green"></i>
+                Objet du site
+            </h3>
+            <p class="text-gray-400">
+                Promotion de l'éthique 2.0 en IA et technologies (JOAFE 20250002).<br>
+                Ce site s'inscrit dans un combat citoyen contre la déliquescence de la foi publique au Bénin.
+            </p>
+        </div>
+    `;
+}
+
+// Mise à jour des informations globales
+function updateGlobalInfo() {
+    document.getElementById('hero-association').textContent = `${siteData.association.nom} • France`;
+    document.getElementById('header-title').textContent = siteData.association.nom;
+    document.getElementById('footer-title').textContent = siteData.association.nom;
+    document.getElementById('footer-email').textContent = siteData.association.email;
+    document.getElementById('footer-site').textContent = siteData.association.site.replace('https://', '');
+    document.getElementById('footer-copyright').textContent = `© ${new Date().getFullYear()} ${siteData.association.nom}`;
+    document.getElementById('share-url').value = window.location.href;
+}
+
 // Mobile menu toggle
 document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-const nav = document.getElementById('mobile-nav');
-nav.classList.toggle('hidden');
+    const nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('hidden');
 });
-// Share functions
+
+// Fonctions de partage
 const shareUrl = window.location.href;
-const shareText = '󰎕 Veille Citoyenne de la Foi Publique au Bénin - Dénonciation des faux documents administratifs et de l\'impunité institutionnelle. #Bénin #Justice #Transparence';
+const shareText = 'Veille Citoyenne de la Foi Publique au Bénin - Dénonciation des faux documents administratifs et de l\'impunité institutionnelle. #Bénin #Justice #Transparence';
+
 function shareTwitter() {
-window.open('https://twitter.com/intent/tweet?text=' +
-encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl), '_blank',
-'width=600,height=400');
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
 }
+
 function shareFacebook() {
-window.open('https://www.facebook.com/sharer/sharer.php?u=' +
-encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
 }
+
 function shareLinkedIn() {
-window.open('https://www.linkedin.com/sharing/share-offsite/?url=' +
-encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl), '_blank', 'width=600,height=400');
 }
+
 function shareWhatsApp() {
-window.open('https://wa.me/?text=' + encodeURIComponent(shareText + ' ' +
-shareUrl), '_blank');
+    window.open('https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + shareUrl), '_blank');
 }
+
 function shareEmail() {
-window.open('mailto:?subject=' + encodeURIComponent('Éthique Juridique 2.0 Bénin') + '&body=' + encodeURIComponent(shareText + '\n\n' + shareUrl), '_blank');
+    window.open('mailto:?subject=' + encodeURIComponent('Éthique Juridique 2.0 Bénin') + '&body=' + encodeURIComponent(shareText + '\n\n' + shareUrl), '_blank');
 }
+
 function copyLink() {
-const input = document.getElementById('share-url');
-input.select();
-document.execCommand('copy');
-const btn = document.getElementById('copy-btn');
-btn.innerHTML = '<i data-lucide="check" class="h-4 w-4 inline mr-1"></i>Copié!';
-btn.classList.add('bg-benin-green', 'text-white');
-lucide.createIcons();
-setTimeout(() => {
-btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier';
-btn.classList.remove('bg-benin-green', 'text-white');
-lucide.createIcons();
-}, 2000);
+    const input = document.getElementById('share-url');
+    input.select();
+    document.execCommand('copy');
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<i data-lucide="check" class="h-4 w-4 inline mr-1"></i>Copié!';
+    btn.classList.add('bg-benin-green', 'text-white');
+    lucide.createIcons();
+    setTimeout(() => {
+        btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4 inline mr-1"></i>Copier';
+        btn.classList.remove('bg-benin-green', 'text-white');
+        lucide.createIcons();
+    }, 2000);
 }
-// Update share URL input
-document.getElementById('share-url').value = shareUrl;
+
+// Initialisation complète
+document.addEventListener('DOMContentLoaded', function() {
+    updateGlobalInfo();
+    renderNavigation();
+    renderStats();
+    renderInstitutions();
+    renderPersonnalites();
+    renderDocuments();
+    renderAffaires();
+    renderMentionsLegales();
+    initIcons();
+});
 </script>
 </body>
 </html>
