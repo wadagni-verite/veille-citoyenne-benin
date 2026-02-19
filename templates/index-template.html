@@ -369,7 +369,8 @@
 
     <!-- DOCUMENTS DYNAMIQUES -->
     <section id="documents" class="py-20 relative">
-        <div class="container mx-auto px-4">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
+        <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                     <span class="text-gradient">Pièces Justificatives</span>
@@ -471,37 +472,6 @@
                             {{ affaire.resume }}
                         </p>
 
-                        {% if affaire.preuves %}
-                        <div class="overflow-x-auto mb-6">
-                            <table class="w-full text-sm">
-                                <thead>
-                                    <tr class="border-b border-dark-border">
-                                        <th class="text-left py-3 px-4 text-gray-400">Document</th>
-                                        <th class="text-left py-3 px-4 text-gray-400">Allégation</th>
-                                        <th class="text-left py-3 px-4 text-gray-400">Contradiction</th>
-                                        <th class="text-left py-3 px-4 text-gray-400">Responsable</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-dark-border">
-                                    {% for preuve in affaire.preuves %}
-                                    <tr>
-                                        <td class="py-3 px-4">{{ preuve.type }}<br><span class="text-xs text-gray-500">{{ preuve.titre }}</span></td>
-                                        <td class="py-3 px-4">{{ preuve.description }}</td>
-                                        <td class="py-3 px-4 text-benin-red">{{ preuve.anomalie }}</td>
-                                        <td class="py-3 px-4">
-                                            {% for personne in personnalites %}
-                                                {% if personne.affaireId == affaire.id %}
-                                                    {{ personne.nom }}{% if not loop.last %}, {% endif %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                        {% endif %}
-
                         <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="calendar" class="h-3 w-3"></i>
@@ -509,15 +479,15 @@
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="building-2" class="h-3 w-3"></i>
-                                {{ affaire.institutions[:2]|join(', ') }}{% if affaire.institutions|length > 2 %}...{% endif %}
+                                Bénin
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="users" class="h-3 w-3"></i>
-                                {{ affaire.personnes|length }} personnes
+                                {{ personnalites|length }} personnes
                             </div>
                             <div class="flex items-center gap-1 px-2 py-1 bg-dark-muted/50 rounded">
                                 <i data-lucide="file-text" class="h-3 w-3"></i>
-                                {{ affaire.documents }} documents
+                                {{ affaire.preuves|length }} documents
                             </div>
                         </div>
 
@@ -805,5 +775,5 @@
             }, 2000);
         }
     </script>
-</body>
+</body> 
 </html>
