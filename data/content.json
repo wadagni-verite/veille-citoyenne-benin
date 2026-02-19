@@ -25,6 +25,12 @@
     "institutions": 7,
     "documents": 9
   },
+  "institutions": [
+    {"nom": "Ministère de la Justice", "type": "Ministère", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "APDP", "type": "Autorité", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "Centif", "type": "Cellule", "cas": 1, "localisation": "Cotonou, Bénin"},
+    {"nom": "Tribunal de Cotonou", "type": "Tribunal", "cas": 1, "localisation": "Cotonou, Bénin"}
+  ],
   "personnalites": [
     {
       "id": "pers-kploca",
@@ -35,20 +41,12 @@
       "description": "Constate comme vrai des faits faux, dans son jugement 114/14/3ème CH-EP du 31 octobre 2014"
     },
     {
-      "id": "pers-police",
-      "nom": "En attente",
-      "role": "Commissaire de Police",
-      "statut": "Actif",
-      "niveau": "CRITIQUE",
-      "description": "Tentative dilatoire pour étouffer une enquête de faux en écriture publique"
-    },
-    {
       "id": "pers-balley",
       "nom": "Félix A. BALLEY",
       "role": "Notaire",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "description": "Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016 et mandataire sans mandat"
+      "description": "Fraude : Obtention et usage du certificat d'acquit de droit frauduleux du 20 oct. 2016"
     },
     {
       "id": "pers-fade",
@@ -72,17 +70,17 @@
       "role": "Président CENTIF-Bénin",
       "statut": "Actif",
       "niveau": "CRITIQUE",
-      "description": "Président de la CENTIF interpellé pour l'inertie du service face aux soupçons de blanchiment."
+      "description": "Inertie face aux soupçons de blanchiment dans la succession."
     }
   ],
   "affaires": [
     {
       "id": "feliho-2014",
-      "titre": "Affaire Succession Jean Florentin FELIHO - Faux manifestes dans des actes authentiques",
+      "titre": "Affaire Succession Jean Florentin FELIHO",
       "statut": "En cours",
       "niveau": "CRITIQUE",
       "date": "31/10/2014",
-      "resume": "Cette affaire met en lumière l'existence de cinq versions officielles incompatibles produites par des officiers publics béninois.",
+      "resume": "Cinq versions officielles incompatibles produites par des officiers publics béninois.",
       "preuves": [
         {
           "type": "Jugement",
@@ -111,7 +109,7 @@
         {
           "type": "Rapport / Alerte",
           "titre": "Inertie CENTIF",
-          "anomalie": "Violation de l'obligation de transmission",
+          "anomalie": "Violation d'obligation légale",
           "responsableId": "pers-bello"
         }
       ]
