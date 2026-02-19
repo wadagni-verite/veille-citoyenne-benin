@@ -155,6 +155,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        /* Value cards hover effect */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 135, 81, 0.5);
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-white">
@@ -331,6 +340,7 @@
         </div>
     </section>
 
+    <!-- SECTION À PROPOS ENRICHIE -->
     <section id="a-propos" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-green/5 to-transparent"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -378,6 +388,112 @@
                             </ul>
                         </div>
 
+                        <!-- SECTION AJOUTÉE : Nos Valeurs Fondamentales -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
+                                <i data-lucide="heart" class="h-5 w-5 text-benin-red"></i>
+                                Nos Valeurs Fondamentales
+                            </h3>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <!-- Transparence -->
+                                <div class="value-card p-5 bg-dark-card/50 rounded-xl border border-dark-border hover:border-benin-green/50 transition-all">
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-3 rounded-xl bg-benin-green/20 flex-shrink-0">
+                                            <i data-lucide="eye" class="h-6 w-6 text-benin-green"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg mb-2 text-benin-green">Transparence</h4>
+                                            <p class="text-sm text-gray-400 leading-relaxed">
+                                                Publication intégrale des documents officiels vérifiables et accessibles à tous. 
+                                                Chaque affaire documentée est accompagnée de pièces justificatives téléchargeables, 
+                                                permettant à chacun de vérifier les faits allégués.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Justice -->
+                                <div class="value-card p-5 bg-dark-card/50 rounded-xl border border-dark-border hover:border-benin-yellow/50 transition-all">
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-3 rounded-xl bg-benin-yellow/20 flex-shrink-0">
+                                            <i data-lucide="scale" class="h-6 w-6 text-benin-yellow"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg mb-2 text-benin-yellow">Justice</h4>
+                                            <p class="text-sm text-gray-400 leading-relaxed">
+                                                Défense inébranlable de la foi publique et lutte contre l'impunité institutionnelle. 
+                                                Nous œuvrons pour que les responsables d'actes attentatoires à l'éthique publique 
+                                                rendent compte de leurs actions devant les juridictions compétentes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Intégrité -->
+                                <div class="value-card p-5 bg-dark-card/50 rounded-xl border border-dark-border hover:border-benin-red/50 transition-all">
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-3 rounded-xl bg-benin-red/20 flex-shrink-0">
+                                            <i data-lucide="shield-check" class="h-6 w-6 text-benin-red"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg mb-2 text-benin-red">Intégrité</h4>
+                                            <p class="text-sm text-gray-400 leading-relaxed">
+                                                Respect strict des procédures légales et des droits de la défense. 
+                                                Nos publications s'appuient exclusivement sur des documents officiels authentifiés, 
+                                                dans le strict respect du droit à la présomption d'innocence.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Portée Internationale -->
+                                <div class="value-card p-5 bg-dark-card/50 rounded-xl border border-dark-border hover:border-benin-green/50 transition-all">
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-3 rounded-xl bg-benin-green/20 flex-shrink-0">
+                                            <i data-lucide="globe" class="h-6 w-6 text-benin-green"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg mb-2 text-benin-green">Portée Internationale</h4>
+                                            <p class="text-sm text-gray-400 leading-relaxed">
+                                                Association basée en France, avec une vision panafricaine et une mobilisation 
+                                                de la diaspora. Nous agissons en conformité avec les engagements internationaux 
+                                                du Bénin en matière de droits de l'homme et d'accès à l'information.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION AJOUTÉE : Notre Engagement -->
+                        <div class="mb-8 p-5 bg-gradient-to-r from-benin-green/10 via-benin-yellow/5 to-benin-red/10 rounded-xl border border-dark-border">
+                            <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                                <i data-lucide="target" class="h-5 w-5 text-benin-yellow"></i>
+                                Notre Engagement
+                            </h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                Dans le cadre de notre combat pour l'éthique juridique 2.0, nous nous engageons à :
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div class="flex items-start gap-2 text-sm text-gray-400">
+                                    <i data-lucide="check-circle" class="h-4 w-4 text-benin-green mt-0.5 flex-shrink-0"></i>
+                                    <span>Vérifier l'authenticité de chaque document publié</span>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm text-gray-400">
+                                    <i data-lucide="check-circle" class="h-4 w-4 text-benin-green mt-0.5 flex-shrink-0"></i>
+                                    <span>Respecter le droit de réponse des personnes mises en cause</span>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm text-gray-400">
+                                    <i data-lucide="check-circle" class="h-4 w-4 text-benin-green mt-0.5 flex-shrink-0"></i>
+                                    <span>Mettre à jour les informations selon l'évolution des procédures</span>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm text-gray-400">
+                                    <i data-lucide="check-circle" class="h-4 w-4 text-benin-green mt-0.5 flex-shrink-0"></i>
+                                    <span>Collaborer avec les autorités judiciaires compétentes</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="p-4 bg-benin-yellow/10 border border-benin-yellow/30 rounded-lg">
                             <div class="flex items-start gap-3">
                                 <i data-lucide="alert-triangle" class="h-5 w-5 text-benin-yellow flex-shrink-0 mt-0.5"></i>
@@ -397,6 +513,7 @@
             </div>
         </div>
     </section>
+    <!-- FIN SECTION À PROPOS ENRICHIE -->
 
     <section id="institutions" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-benin-yellow/5 to-transparent"></div>
@@ -1351,4 +1468,4 @@
         document.getElementById('share-url').value = shareUrl;
     </script>
 </body>
-</html>
+</html>                 
