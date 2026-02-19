@@ -23,7 +23,7 @@
     "affaires": 1,
     "personnes": 6,
     "institutions": 7,
-    "documents": 7
+    "documents": 9
   },
   "institutions": [
     {
@@ -108,7 +108,7 @@
       "statut": "Actif",
       "niveau": "CRITIQUE",
       "affaireId": "feliho-2014",
-      "description": Arbitraire, violation de la loi sur le numérique, menace écrite contre la victime dans le dossier n°2024-C/010/DST/SCC/CJT
+      "description": "Arbitraire, violation de la loi sur le numérique, menace écrite contre la victime dans le dossier n°2024-C/010/DST/SCC/CJT"
     },
     {
       "nom": "Abdou Rafiou BELLO",
@@ -186,27 +186,24 @@
           "description": "Lettre de demande de réouverture de l'enquête préliminaire au parquet spécial de la CRIET",
           "lien": "https://www.dropbox.com/scl/fo/h5hm9xx217epxwphy0ls3/AEywUNPsAobdCjbXyyaexlI?rlkey=q2dgukntqw1sw4zjv6sypl952&st=4w13cegh&dl=0",
           "anomalie": "En attente de réponse"
+        },
+        {
+          "type": "E-mail / Menace",
+          "titre": "Réponse APDP - Dossier n°2024-C/010/DST/SCC/CJT",
+          "date": "16/12/2024",
+          "description": "Preuve d'intimidation institutionnelle : suite à une dénonciation de violation de la loi sur le numérique (Art. 437), l'APDP répond par des menaces écrites : 'vous répondrez de vos actes en temps opportun'. Ce document illustre une atteinte au droit constitutionnel à la protection des données (Art. 35).",
+          "lien": "https://www.dropbox.com/scl/fo/vgqpal655qljrlazcsh22/ANGjzztIa67ZPJUXcnINQuU?rlkey=0bu1b3ox70ttsugix0nei7scj&st=qwoerb6q&dl=1",
+          "anomalie": "Abus d'autorité et intimidation"
+        },
+        {
+          "type": "Rapport / Alerte",
+          "titre": "Inertie CENTIF : Risque Systémique LBC/FT",
+          "date": "11/09/2025",
+          "description": "Dossier démontrant une sous-évaluation immobilière de plus de 1,5 milliard FCFA. Malgré l'évidence des faits, l'inertie de la CENTIF (violation de l'Art. 29 de la loi 2006-14) expose le Bénin à un risque de placement sur la 'liste grise' du GAFI/GIABA pour impunité.",
+          "lien": "https://www.dropbox.com/scl/fo/xm3epa7cidg45xh491vhp/ADPWxUWVmJj3gBjJFjPTnd0?rlkey=5oidc43ukz4u13zmo3wilq232&st=ufftljgl&dl=1",
+          "anomalie": "Violation de l'obligation de transmission au Parquet"
         }
       ]
     }
   ]
 }
-"preuves": [
-  // ... les preuves existantes ...
-  {
-    "type": "E-mail / Menace",
-    "titre": "Réponse APDP - Dossier n°2024-C/010/DST/SCC/CJT",
-    "date": "16/12/2024",
-    "description": "Preuve d'intimidation institutionnelle : suite à une dénonciation de violation de la loi sur le numérique (Art. 437), l'APDP répond par des menaces écrites : 'vous répondrez de vos actes en temps opportun'. Ce document illustre une atteinte au droit constitutionnel à la protection des données (Art. 35).",
-    "lien": "https://www.dropbox.com/scl/fo/vgqpal655qljrlazcsh22/ANGjzztIa67ZPJUXcnINQuU?rlkey=0bu1b3ox70ttsugix0nei7scj&st=qwoerb6q&dl=1",
-    "anomalie": "Abus d'autorité et intimidation"
-  },
-  {
-    "type": "Rapport / Alerte",
-    "titre": "Inertie CENTIF : Risque Systémique LBC/FT",
-    "date": "11/09/2025",
-    "description": "Dossier démontrant une sous-évaluation immobilière de plus de 1,5 milliard FCFA. Malgré l'évidence des faits, l'inertie de la CENTIF (violation de l'Art. 29 de la loi 2006-14) expose le Bénin à un risque de placement sur la 'liste grise' du GAFI/GIABA pour impunité.",
-    "lien": "https://www.dropbox.com/scl/fo/xm3epa7cidg45xh491vhp/ADPWxUWVmJj3gBjJFjPTnd0?rlkey=5oidc43ukz4u13zmo3wilq232&st=ufftljgl&dl=1",
-    "anomalie": "Violation de l'obligation de transmission au Parquet"
-  }
-]
