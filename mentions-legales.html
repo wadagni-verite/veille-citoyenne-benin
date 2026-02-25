@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - Veille Citoyenne Bénin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --benin-red: #E8112D;
+            --benin-yellow: #FCD116;
+            --benin-green: #008751;
+        }
+        body { background-color: #0a0a0a; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, var(--benin-green), var(--benin-yellow), var(--benin-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-dark-muted\/30 { background-color: rgba(38, 38, 38, 0.3); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <nav class="p-6">
+        <div class="container mx-auto">
+            <a href="index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-benin-green transition-colors">
+                <i data-lucide="arrow-left" class="h-5 w-5"></i>
+                Retour à l'accueil
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-12 px-4">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto glass-card rounded-xl overflow-hidden shadow-2xl">
+                <div class="h-1 bg-gradient-to-r from-[#008751] via-[#FCD116] to-[#E8112D]"></div>
+                
+                <div class="p-8 sm:p-12">
+                    <header class="text-center mb-12">
+                        <h1 class="text-3xl sm:text-4xl font-bold mb-4">
+                            <span class="text-gradient">Mentions Légales</span>
+                        </h1>
+                        <p class="text-gray-400 max-w-2xl mx-auto">
+                            Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique (L.C.E.N.).
+                        </p>
+                    </header>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 bg-dark-muted/30 rounded-lg border border-white/5">
+                            <h3 class="font-semibold mb-4 flex items-center gap-3 text-benin-green">
+                                <i data-lucide="building-2" class="h-5 w-5"></i>
+                                Éditeur du site
+                            </h3>
+                            <div class="text-gray-300 space-y-1 text-sm leading-relaxed">
+                                <p class="font-bold text-white">Éthique Juridique 2.0 Internationale</p>
+                                <p>Association loi 1901</p>
+                                <p>RNA : W941020107</p>
+                                <p>Siège : 60 rue G. EIFFEL, 94000 Créteil</p>
+                                <p>Tél : +33 1 48 98 02 07</p>
+                                <p>Email : <a href="mailto:contact@eji2.org" class="text-benin-green hover:underline">contact@eji2.org</a></p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-dark-muted/30 rounded-lg border border-white/5">
+                            <h3 class="font-semibold mb-4 flex items-center gap-3 text-benin-green">
+                                <i data-lucide="user" class="h-5 w-5"></i>
+                                Publication
+                            </h3>
+                            <div class="text-gray-300 text-sm">
+                                <p class="mb-2">Directeur de la publication :</p>
+                                <p class="text-white font-medium text-lg">Gilles Sixte FELIHO</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-dark-muted/30 rounded-lg border border-white/5">
+                            <h3 class="font-semibold mb-4 flex items-center gap-3 text-benin-green">
+                                <i data-lucide="server" class="h-5 w-5"></i>
+                                Hébergement
+                            </h3>
+                            <div class="text-gray-300 text-sm">
+                                <p class="font-bold text-white">Netlify, Inc.</p>
+                                <p>44 Montgomery Street, Suite 300</p>
+                                <p>San Francisco, California 94104</p>
+                                <p>États-Unis</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-dark-muted/30 rounded-lg border border-white/5">
+                            <h3 class="font-semibold mb-4 flex items-center gap-3 text-benin-green">
+                                <i data-lucide="info" class="h-5 w-5"></i>
+                                Objet du site
+                            </h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Promotion de l'éthique 2.0 en IA et technologies. Ce site s'inscrit dans un combat citoyen contre la déliquescence de la foi publique au Bénin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 EJI.2.0 Internationale - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
